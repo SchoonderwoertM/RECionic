@@ -1,0 +1,10 @@
+Loader inplementeren
+
+CompletedInspections
+     <ion-card-header @click="toggle(index)">
+
+        methods: {
+            toggle(index) {
+              this.cards[index].showContent = !this.cards[index].showContent;
+            }
+          },
