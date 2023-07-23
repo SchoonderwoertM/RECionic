@@ -11,6 +11,11 @@ ion-footer {
   --ion-background-color: var(--ion-color-primary);
 }
 
+ion-spinner {
+  width: 100px;
+  height: 100px;
+}
+
 /*Ion Card*/
 ion-card {
   background-color: #42484b;
@@ -23,6 +28,10 @@ ion-card-title {
 
 ion-card-subtitle {
   --color: var(--ion-color-secondary-contrast);
+}
+
+ion-card-content {
+  color: var(--ion-color-primary-contrast);
 }
 /*End Ion Card*/
 
@@ -86,3 +95,18 @@ ion-back-button {
   color: var(--ion-color-primary);
 }
 /*End Home*/
+
+/*Documents*/
+#documentCard {
+  border: none;
+  box-shadow: none;
+}
+
+.documentTitle {
+  float: left;
+}
+/*End Documents*/
+
+main{
+  margin: 100px;
+}

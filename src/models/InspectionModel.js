@@ -1,10 +1,11 @@
 export class InspectionModel {
-  constructor(id, address, inspections) {
+  constructor(id, completed, address, inspections) {
     this.id = id;
     this.street = address[0].street;
     this.housenumber = address[0].housenumber;
     this.residence = address[0].residence;
     this.inspectionDate = inspections[0].date;
+    this.completed = completed;
     if (typeof inspections[0].damage[0] != "undefined")
       this.damageReport = new DamageReportModel(
         inspections[0].damage[0]

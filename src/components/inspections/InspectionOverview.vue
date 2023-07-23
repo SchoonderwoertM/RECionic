@@ -154,7 +154,9 @@
 <script>
 import { IonLabel, IonList, IonItem, IonListHeader } from "@ionic/vue";
 export default {
-  name: "FullReport",
-  components: { IonLabel, IonList, IonItem, IonListHeader  },
+  props: {
+    inspection: ["inspection"]
+  },
+  components: { IonLabel, IonList, IonItem, IonListHeader },
 };
 </script>
