@@ -1,55 +1,75 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import HomePage from '../pages/HomePage.vue';
-import CompletedInspections from '../pages/CompletedInspectionsPage.vue';
-import Documents from '../pages/DocumentsPage.vue';
-import Settings from '../pages/SettingsPage.vue';
-import AssignedInspections from '../pages/AssignedInspectionsPage.vue';
-import Login from '../pages/LoginPage.vue';
+import { createRouter, createWebHistory } from "@ionic/vue-router";
+import HomePage from "../pages/HomePage.vue";
+import LoginPage from "../pages/LoginPage.vue"
+import AuthenticationPage from "../pages/AuthenticationPage.vue"
 
 const routes = [
   {
-    path: '/login',
-    name: 'login',
-    component: Login,
-  },
-  {
-    path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
-    name: 'home',
-    component: HomePage
+    path: "/home",
+    name: "home",
+    component: HomePage,
+    meta: { requiresAuth: true },
   },
   {
     path: "/assignedInspections",
     name: "assignedInspections",
-    component: AssignedInspections,
+    component: () => import("../pages/AssignedInspectionsPage.vue"),
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/assignedInspections",
+    name: "assignedInspections/:id",
+    component: () => import("../pages/InspectionDetailsPage.vue"),
   },
   {
     path: "/completedInspections",
     name: "completedInspections",
-    component: CompletedInspections,
+    component: () => import("../pages/CompletedInspectionsPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/completedInspections/:id",
-    component: () => import('../pages/InspectionDetailsPage.vue')
+    component: () => import("../pages/InspectionDetailsPage.vue"),
   },
   {
     path: "/documents",
     name: "documents",
-    component: Documents,
+    component: () => import("../pages/DocumentsPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/settings",
     name: "settings",
-    component: Settings,
+    component: () => import("../pages/SettingsPage.vue"),
   },
-]
+  {
+    path: "/",
+    redirect: "/login",
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginPage,
+  },
+  {
+    path: "/authentication",
+    name: "authentication",
+    component: AuthenticationPage,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = sessionStorage.getItem("Authenticated") === "true";
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next("/login");
+  } else {
+    next();
+  }
+});
+
+export default router;

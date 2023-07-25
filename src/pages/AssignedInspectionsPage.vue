@@ -1,9 +1,11 @@
 <template>
   <base-layout page-default-back-link="/home">
-    <ion-label>
-      <h1>Toegewezen rapportages</h1>
-    </ion-label>
-    <inspections-list :inspections="inspections"></inspections-list>
+    <div class="pageContent">
+      <ion-label>
+        <h1>Toegewezen rapportages</h1>
+      </ion-label>
+      <inspections-list :inspections="inspections"></inspections-list>
+    </div>
   </base-layout>
 </template>
 

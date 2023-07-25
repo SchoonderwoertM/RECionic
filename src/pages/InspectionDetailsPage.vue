@@ -1,24 +1,28 @@
 <template>
   <base-layout page-default-back-link="/completedInspections">
-    <ion-label>
-      <h1>Details inspectie</h1>
-    </ion-label>
-    <h2 v-if="!loadedInspection">
-      Kan de inspectie met het opgegeven id niet vinden.
-    </h2>
-    <inspection-overview
-      v-else
-      :inspection="loadedInspection"
-    ></inspection-overview>
+    <div class="pageContent">
+      <ion-label>
+        <h1>Details inspectie</h1>
+      </ion-label>
+      <h2 v-if="!loadedInspection">
+        Kan de inspectie met het opgegeven id niet vinden.
+      </h2>
+      <inspection-overview
+        v-else
+        :inspection="loadedInspection"
+      ></inspection-overview>
+    </div>
   </base-layout>
 </template>
 
 <script>
 import InspectionOverview from "@/components/inspections/InspectionOverview.vue";
+import { IonLabel } from "@ionic/vue";
 
 export default {
   components: {
     InspectionOverview,
+    IonLabel
   },
   data() {
     return { inspectionId: this.$route.params.id };

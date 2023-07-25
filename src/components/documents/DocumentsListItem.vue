@@ -1,9 +1,8 @@
 <template>
   <ion-item>
     <ion-card id="documentCard" color="secondary">
-      <ion-card-header>
-        <div>
-          <ion-card-title class="documentTitle ion-padding-end">{{ document.title }}</ion-card-title>
+      <ion-card-header id="documentCardHeader">
+          <ion-card-title>{{ document.title }}</ion-card-title>
           <ion-button @click="document.showContent = !document.showContent">
             <ion-icon
               :icon="
@@ -12,7 +11,6 @@
               slot="icon-only"
             ></ion-icon>
           </ion-button>
-        </div>
       </ion-card-header>
       <ion-card-content v-show="document.showContent">
         {{ document.content }}

@@ -5,10 +5,22 @@ const key = "$2b$10$xGY57xK/yyF20/AcOpvLJuWh3MnrWeuQZG60ykSCOe49wS5oQ0tw.";
 
 const store = createStore({
   state: {
-      inspections: [],
-      loading: false,
+    loggedIn: false,
+    authenticated: false,
+    username: "",
+    inspections: [],
+    loading: false,
   },
   mutations: {
+    SET_LOGGEDIN(state, loggedIn) {
+      state.loggedIn = loggedIn;
+    },
+    SET_AUTHENTICATION(state, authenticated) {
+      state.authenticated = authenticated;
+    },
+    SET_USERNAME(state, username) {
+      state.username = username;
+    },
     SET_INSPECTIONS(state, inspections) {
       state.inspections = inspections;
     },
@@ -20,7 +32,7 @@ const store = createStore({
     async fetchInspections({ commit }) {
       const inspections = [];
       try {
-        commit('IS_LOADING', true);
+        commit("IS_LOADING", true);
         const response = await fetch(url, {
           headers: {
             "Content-Type": "application/json",
@@ -43,12 +55,21 @@ const store = createStore({
         commit("IS_LOADING", false);
         commit("SET_INSPECTIONS", inspections);
       } catch (error) {
-        commit('IS_LOADING', false);
+        commit("IS_LOADING", false);
         console.error(error);
       }
     },
   },
   getters: {
+    isUserAuthenticated(state) {
+      return state.authenticated;
+    },
+    isUserLoggedIn(state) {
+      return state.loggedIn;
+    },
+    getUsername(state) {
+      return state.username;
+    },
     inspections(state) {
       return state.inspections;
     },
@@ -59,9 +80,9 @@ const store = createStore({
         );
       };
     },
-    loading(state){
+    loading(state) {
       return state.loading;
-    }
+    },
   },
 });
 

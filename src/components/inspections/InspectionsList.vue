@@ -15,7 +15,7 @@ import InspectionListItem from "./InspectionsListItem.vue";
 import { IonList, IonSpinner } from "@ionic/vue";
 
 export default {
-  props: ["inspections"],
+  props: ["inspections",],
   components: {
     InspectionListItem,
     IonList,

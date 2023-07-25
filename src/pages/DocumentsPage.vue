@@ -1,9 +1,14 @@
 <template>
   <base-layout page-default-back-link="/home">
-    <ion-label>
-      <h1>Documents</h1>
-    </ion-label>
-    <documents-list :documents="documents" class="pagePadding"></documents-list>
+    <div class="pageContent">
+      <ion-label>
+        <h1>Documents</h1>
+      </ion-label>
+      <documents-list
+        :documents="documents"
+        class="pagePadding"
+      ></documents-list>
+    </div>
   </base-layout>
 </template>
 
