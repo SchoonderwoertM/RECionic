@@ -1,13 +1,11 @@
 <template>
   <ion-spinner v-if="loading" name="bubbles"></ion-spinner>
-  <ion-list>
     <inspection-list-item
       v-for="inspection in inspections"
       :key="inspection.id"
       :inspection="inspection"
     >
     </inspection-list-item>
-  </ion-list>
 </template>
 
 <script>

@@ -1,9 +1,6 @@
 <template>
   <base-layout page-default-back-link="/completedInspections">
     <div class="pageContent">
-      <ion-label>
-        <h1>Details inspectie</h1>
-      </ion-label>
       <h2 v-if="!loadedInspection">
         Kan de inspectie met het opgegeven id niet vinden.
       </h2>
@@ -20,6 +17,7 @@ import InspectionOverview from "@/components/inspections/InspectionOverview.vue"
 import { IonLabel } from "@ionic/vue";
 
 export default {
+  name: "InspectionDetails",
   components: {
     InspectionOverview,
     IonLabel

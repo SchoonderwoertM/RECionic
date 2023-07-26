@@ -1,12 +1,11 @@
 <template>
-  <ion-list>
-    <documents-list-item 
+  <documents-list-item
     v-for="(document, index) in documents"
     :key="index"
     :document="document"
-    :index="index">
-    </documents-list-item>
-  </ion-list>
+    :index="index"
+  >
+  </documents-list-item>
 </template>
 
 <script>

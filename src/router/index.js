@@ -17,18 +17,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/assignedInspections",
-    name: "assignedInspections/:id",
-    component: () => import("../pages/InspectionDetailsPage.vue"),
-  },
-  {
     path: "/completedInspections",
     name: "completedInspections",
     component: () => import("../pages/CompletedInspectionsPage.vue"),
     meta: { requiresAuth: true },
   },
   {
-    path: "/completedInspections/:id",
+    path: "/inspection/:id",
     component: () => import("../pages/InspectionDetailsPage.vue"),
   },
   {
@@ -41,6 +36,16 @@ const routes = [
     path: "/settings",
     name: "settings",
     component: () => import("../pages/SettingsPage.vue"),
+  },
+  {
+    path: "/notifications",
+    name: "notifications",
+    component: () => import("../pages/NotificationsPage.vue"),
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("../pages/ContactPage.vue"),
   },
   {
     path: "/",

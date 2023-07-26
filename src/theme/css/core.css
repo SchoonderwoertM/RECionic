@@ -57,16 +57,16 @@ ion-card-content {
 /*End Ion Card*/
 
 /*List*/
+.ion-list {
+  background-color: var(--ion-color-secondary-tint);
+}
+
 ion-list-header {
   font-size: larger;
 }
 
 ion-item {
   --background: var(--ion-color-secondary-tint);
-}
-
-.ion-list {
-  background-color: var(--ion-color-secondary-shade);
 }
 /*End list*/
 
@@ -109,13 +109,6 @@ ion-back-button {
 /*End Home*/
 
 /*Documents*/
-#documentCard {
-  border: none;
-  box-shadow: none;
-  margin: 1rem auto;
-  max-inline-size: 500px;
-}
-
 #documentCardHeader{
   display: flex;
   flex-direction: row;

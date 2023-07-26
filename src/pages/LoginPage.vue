@@ -45,6 +45,7 @@ import {
 } from "@ionic/vue";
 
 export default {
+  name: "Login",
   components: {
     IonPage,
     IonCard,

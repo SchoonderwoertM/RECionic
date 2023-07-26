@@ -75,9 +75,10 @@ const store = createStore({
     },
     inspection(state) {
       return (inspectionId) => {
-        return state.inspections.find(
-          (inspection) => inspection.id === inspectionId
-        );
+        const result = state.inspections.find(function (inspection) {
+          return inspection.id == inspectionId;
+        });
+        return result;
       };
     },
     loading(state) {

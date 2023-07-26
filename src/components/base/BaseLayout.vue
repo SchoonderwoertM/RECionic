@@ -38,7 +38,7 @@
               <ion-icon :icon="homeOutline" slot="icon-only"></ion-icon>
             </ion-button>
           </router-link>
-          <router-link to="/home">
+          <router-link to="/notifications">
             <ion-button>
               <ion-icon
                 :icon="notificationsOutline"
@@ -46,9 +46,9 @@
               ></ion-icon>
             </ion-button>
           </router-link>
-          <router-link to="/home">
+          <router-link to="/contact">
             <ion-button>
-              <ion-icon :icon="helpOutline" slot="icon-only"></ion-icon>
+              <ion-icon :icon="callOutline" slot="icon-only"></ion-icon>
             </ion-button>
           </router-link>
         </ion-buttons>
@@ -60,7 +60,7 @@
 <script>
 import {
   homeOutline,
-  helpOutline,
+  callOutline,
   notificationsOutline,
   logOutOutline,
 } from "ionicons/icons";
@@ -98,7 +98,7 @@ export default {
   setup() {
     return {
       homeOutline,
-      helpOutline,
+      callOutline,
       notificationsOutline,
       logOutOutline,
     };

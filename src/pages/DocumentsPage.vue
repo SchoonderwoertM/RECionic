@@ -17,6 +17,7 @@ import DocumentsList from "@/components/documents/documentsList.vue";
 import { IonLabel } from "@ionic/vue";
 
 export default {
+  name: "Documents",
   components: { DocumentsList, IonLabel },
   data() {
     return {

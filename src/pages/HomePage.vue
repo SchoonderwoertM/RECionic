@@ -1,5 +1,5 @@
 <template>
-  <base-layout page-title="Home">
+  <base-layout>
     <ion-grid>
       <ion-row>
         <ion-col size="6">

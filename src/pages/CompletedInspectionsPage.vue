@@ -14,6 +14,7 @@ import InspectionsList from "@/components/inspections/InspectionsList.vue";
 import { IonLabel } from "@ionic/vue";
 
 export default {
+  name: "CompletedInspections",
   components: { InspectionsList, IonLabel },
   created() {
     if (!this.$store.getters.inspections.length) {

@@ -1,23 +1,23 @@
 <template>
-  <ion-item :router-link="`/completedInspections/${inspection.id}`">
-    <ion-label>
+  <ion-card :router-link="`/inspection/${inspection.id}`">
+    <ion-card-content>
       <p>{{ inspection.inspectionDate }}</p>
       <h2>
         {{ inspection.street }} {{ inspection.housenumber }},
         {{ inspection.residence }}
       </h2>
-    </ion-label>
-  </ion-item>
+    </ion-card-content>
+  </ion-card>
 </template>
 
 <script>
-import { IonItem, IonLabel } from "@ionic/vue";
+import { IonCard, IonCardContent } from "@ionic/vue";
 
 export default {
   props: ["inspection"],
   components: {
-    IonItem,
-    IonLabel,
+    IonCard,
+    IonCardContent,
   },
 };
 </script>
