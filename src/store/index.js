@@ -9,6 +9,7 @@ const store = createStore({
     authenticated: false,
     username: "",
     inspections: [],
+    inspection: {},
     loading: false,
   },
   mutations: {
@@ -23,6 +24,9 @@ const store = createStore({
     },
     SET_INSPECTIONS(state, inspections) {
       state.inspections = inspections;
+    },
+    SET_INSPECTION(state, inspection) {
+      state.inspection = inspection;
     },
     IS_LOADING(state, value) {
       state.loading = value;

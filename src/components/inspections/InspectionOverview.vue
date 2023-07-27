@@ -11,6 +11,9 @@
       </h2></ion-card-subtitle
     >
     <ion-card-content>
+      <ion-button :router-link="`/editReport/${inspection.id}`"
+        >Aanpassen</ion-button
+      >
       <ion-list v-if="inspection.damageReport" lines="none" class="ion-list">
         <ion-list-header color="primary">
           <ion-label>Schade</ion-label>
@@ -196,6 +199,7 @@ import {
   IonCardSubtitle,
   IonCardHeader,
   IonCardContent,
+  IonButton,
 } from "@ionic/vue";
 export default {
   props: ["inspection"],
@@ -209,6 +213,7 @@ export default {
     IonCardSubtitle,
     IonCardHeader,
     IonCardContent,
+    IonButton,
   },
 };
 </script>
