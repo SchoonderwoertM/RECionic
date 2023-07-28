@@ -1,5 +1,5 @@
 export class InspectionModel {
-  constructor(id, completed, address, inspections) {
+  constructor(id, address, inspections, completed) {
     this.id = id;
     this.street = address[0].street;
     this.housenumber = address[0].housenumber;

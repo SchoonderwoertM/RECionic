@@ -7,7 +7,7 @@ const store = createStore({
   state: {
     loggedIn: false,
     authenticated: false,
-    username: "",
+    user: {},
     inspections: [],
     inspection: {},
     loading: false,
@@ -19,8 +19,8 @@ const store = createStore({
     SET_AUTHENTICATION(state, authenticated) {
       state.authenticated = authenticated;
     },
-    SET_USERNAME(state, username) {
-      state.username = username;
+    SET_USER(state, user) {
+      state.user = user;
     },
     SET_INSPECTIONS(state, inspections) {
       state.inspections = inspections;
@@ -30,6 +30,12 @@ const store = createStore({
     },
     IS_LOADING(state, value) {
       state.loading = value;
+    },
+    UPDATE_REPORT(state, updatedReport) {
+      state.inspections = state.inspections.map((inspection) =>
+        inspection.id === updatedReport.id ? updatedReport : inspection
+      );
+      this.dispatch("loadReports");
     },
   },
   actions: {
@@ -44,15 +50,15 @@ const store = createStore({
           },
         });
         const jsonData = await response.json();
-        const result = jsonData.record.inspectionData;
+        const result = jsonData.record;
 
         for (let i = 0; i < result.length; i++) {
           inspections.push(
             new InspectionModel(
               result[i].id,
-              result[i].completed,
               result[i].address,
-              result[i].inspections
+              result[i].inspections,
+              result[i].completed,
             )
           );
         }
@@ -63,6 +69,32 @@ const store = createStore({
         console.error(error);
       }
     },
+    async updateReport({ commit, state }) {
+      commit("IS_LOADING", true);
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key": key,
+        },
+        body: JSON.stringify(state.inspections),
+      };
+      await fetch(url, options)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((updatedData) => {
+          console.log("Data updated:", updatedData);
+        })
+        .catch((error) => {
+          console.error("Error updating data:", error);
+        });
+      commit("UPDATE_REPORT", state.inspections);
+      commit("IS_LOADING", false);
+    },
   },
   getters: {
     isUserAuthenticated(state) {
@@ -71,8 +103,8 @@ const store = createStore({
     isUserLoggedIn(state) {
       return state.loggedIn;
     },
-    getUsername(state) {
-      return state.username;
+    getUser(state) {
+      return state.user;
     },
     inspections(state) {
       return state.inspections;

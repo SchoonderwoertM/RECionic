@@ -36,6 +36,7 @@
             :modificationsReport="loadedInspection.modificationsReport"
           />
         </ion-card-content>
+        <ion-button @click="updateReport">Opslaan</ion-button>
       </ion-card>
     </div>
   </base-layout>
@@ -86,5 +87,11 @@ export default {
       return this.$store.getters.loading;
     },
   },
+  methods:{
+    updateReport(){
+      this.$store.dispatch('updateReport');
+      // this.$router.go(-2);
+    }
+  }
 };
 </script>

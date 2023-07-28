@@ -106,7 +106,7 @@ export default {
   methods: {
     logout() {
       this.$store.commit("SET_AUTHENTICATION", false);
-      this.$store.commit("SET_USERNAME", "");
+      this.$store.commit("SET_USER", "");
       sessionStorage.setItem("Authenticated", false);
       this.$router.replace("/login");
     },
