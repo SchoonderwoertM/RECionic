@@ -2,7 +2,7 @@ export class InspectionModel {
   constructor(id, address, inspections, completed ) {
     this.id = id;
     this.completed = completed;
-    this.address = new Array(new AddressModel(address[0]));
+    this.address = new AddressModel(address);
     this.inspections = new Array(new ReportsModel(inspections[0]));
   }
 }

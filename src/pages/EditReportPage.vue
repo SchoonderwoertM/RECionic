@@ -8,8 +8,9 @@
         >
         <ion-card-subtitle>
           <h2>
-            {{ loadedInspection.address[0].street }} {{ loadedInspection.address[0].housenumber }},
-            {{ loadedInspection.address[0].residence }}
+            {{ loadedInspection.address.street }}
+            {{ loadedInspection.address.housenumber }},
+            {{ loadedInspection.address.residence }}
           </h2></ion-card-subtitle
         >
         <ion-label>Datum:</ion-label>
@@ -23,16 +24,22 @@
             :damageReport="loadedInspection.inspections[0].damageReport"
           />
           <maintenanceReport
-            :maintenanceReport="loadedInspection.inspections[0].maintenanceReport"
+            :maintenanceReport="
+              loadedInspection.inspections[0].maintenanceReport
+            "
           />
           <installationsReport
-            :installationsReport="loadedInspection.inspections[0].installationsReport"
+            :installationsReport="
+              loadedInspection.inspections[0].installationsReport
+            "
           />
           <modificationReport
-            :modificationsReport="loadedInspection.inspections[0].modificationsReport"
+            :modificationsReport="
+              loadedInspection.inspections[0].modificationsReport
+            "
           />
         </ion-card-content>
-        <ion-button @click="updateReport">Opslaan</ion-button>
+          <ion-button @click="updateReport">Opslaan</ion-button>
       </ion-card>
     </div>
   </base-layout>
@@ -83,11 +90,11 @@ export default {
       return this.$store.getters.loading;
     },
   },
-  methods:{
-    updateReport(){
-      this.$store.dispatch('updateReport');
+  methods: {
+    updateReport() {
+      this.$store.dispatch("updateReport", false);
       // this.$router.go(-2);
-    }
-  }
+    },
+  },
 };
 </script>

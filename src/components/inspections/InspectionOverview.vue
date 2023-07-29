@@ -6,8 +6,8 @@
     <ion-card-subtitle
       ><p>{{ inspection.inspections.date }}</p>
       <h2>
-        {{ inspection.address[0].street }} {{ inspection.address[0].housenumber }},
-        {{ inspection.address[0].residence }}
+        {{ inspection.address.street }} {{ inspection.address.housenumber }},
+        {{ inspection.address.residence }}
       </h2></ion-card-subtitle
     >
     <ion-card-content>

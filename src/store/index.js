@@ -35,7 +35,6 @@ const store = createStore({
       state.inspections = state.inspections.map((inspection) =>
         inspection.id === updatedReport.id ? updatedReport : inspection
       );
-      this.dispatch("loadReports");
     },
   },
   actions: {
@@ -85,9 +84,6 @@ const store = createStore({
             throw new Error(`HTTP error ${response.status}`);
           }
           return response.json();
-        })
-        .then((updatedData) => {
-          console.log("Data updated:", updatedData);
         })
         .catch((error) => {
           console.error("Error updating data:", error);

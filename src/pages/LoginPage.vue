@@ -68,7 +68,6 @@ export default {
   },
   methods: {
     async login() {
-      //make sure username AND password are not empty
       if (this.input.username != "" && this.input.password != "") {
         try {
           const url = "https://api.jsonbin.io/v3/b/64c279ed8e4aa6225ec5e62f";
@@ -85,7 +84,6 @@ export default {
           });
           const user = await response.json();
           if (response.status === 200 && user.record[0]) {
-            //stores true to the set_loggedIn and username to the set_username
             this.$store.commit("SET_LOGGEDIN", true);
             this.$store.commit("SET_USER", user.record[0]);
 
