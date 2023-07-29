@@ -18,7 +18,7 @@
     <ion-item
       ><ion-label position="fixed">Uitgevoerd door: </ion-label>
       <ion-select
-        label="Uitgevoerd door:"
+      aria-label="Uitgevoerd door"
         placeholder="Selecteer"
         v-model="modificationsReport.modiPerformedBy"
       >
@@ -43,7 +43,7 @@
         v-model="modificationsReport.modiAction"
       ></ion-input>
       <ion-select
-        label="Te ondernemen actie:"
+      aria-label="Te ondernemen actie"
         placeholder="Selecteer"
         v-model="modificationsReport.modiAction"
       >

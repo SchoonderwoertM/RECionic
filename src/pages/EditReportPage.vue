@@ -8,32 +8,28 @@
         >
         <ion-card-subtitle>
           <h2>
-            {{ loadedInspection.street }} {{ loadedInspection.housenumber }},
-            {{ loadedInspection.residence }}
+            {{ loadedInspection.address[0].street }} {{ loadedInspection.address[0].housenumber }},
+            {{ loadedInspection.address[0].residence }}
           </h2></ion-card-subtitle
         >
         <ion-label>Datum:</ion-label>
         <ion-input
           type="date"
-          v-model="loadedInspection.inspectionDate"
+          v-model="loadedInspection.inspections[0].date"
           required
         />
         <ion-card-content>
           <damageReport
-            v-if="loadedInspection.damageReport"
-            :damageReport="loadedInspection.damageReport"
+            :damageReport="loadedInspection.inspections[0].damageReport"
           />
           <maintenanceReport
-            v-if="loadedInspection.maintenanceReport"
-            :maintenanceReport="loadedInspection.maintenanceReport"
+            :maintenanceReport="loadedInspection.inspections[0].maintenanceReport"
           />
           <installationsReport
-            v-if="loadedInspection.installationsReport"
-            :installationsReport="loadedInspection.installationsReport"
+            :installationsReport="loadedInspection.inspections[0].installationsReport"
           />
           <modificationReport
-            v-if="loadedInspection.modificationsReport"
-            :modificationsReport="loadedInspection.modificationsReport"
+            :modificationsReport="loadedInspection.inspections[0].modificationsReport"
           />
         </ion-card-content>
         <ion-button @click="updateReport">Opslaan</ion-button>

@@ -1,76 +1,82 @@
 export class InspectionModel {
-  constructor(id, address, inspections, completed) {
+  constructor(id, address, inspections, completed ) {
     this.id = id;
-    this.street = address[0].street;
-    this.housenumber = address[0].housenumber;
-    this.residence = address[0].residence;
-    this.inspectionDate = inspections[0].date;
     this.completed = completed;
-    if (typeof inspections[0].damage[0] != "undefined")
-      this.damageReport = new DamageReportModel(
-        inspections[0].damage[0]
-        );
-    if (typeof inspections[0].maintenance[0] != "undefined")
-      this.maintenanceReport = new MaintenanceModel(
-        inspections[0].maintenance[0]
-      );
-    if (typeof inspections[0].installations[0] != "undefined")
-      this.installationsReport = new InstallationModel(
-        inspections[0].installations[0]
-      );
-    if (typeof inspections[0].modifications[0] != "undefined")
-      this.modificationsReport = new ModificationsModel(
-        inspections[0].modifications[0]
-      );
+    this.address = new Array(new AddressModel(address[0]));
+    this.inspections = new Array(new ReportsModel(inspections[0]));
+  }
+}
+
+export class AddressModel {
+  constructor(address) {
+    this.street = address.street;
+    this.housenumber = address.housenumber;
+    this.zipcode = address.zipcode;
+    this.residence = address.residence;
+  }
+}
+
+export class ReportsModel{
+  constructor(inspections){
+    this.id = inspections.id;
+    this.date = inspections.date;
+    this.damageReport = new DamageReportModel(inspections.damageReport);
+    this.maintenanceReport = new MaintenanceModel(
+      inspections.maintenanceReport
+    );
+    this.installationsReport = new InstallationModel(
+      inspections.installationsReport
+    );
+    this.modificationsReport = new ModificationsModel(
+      inspections.modificationsReport
+    );
   }
 }
 
 export class DamageReportModel {
   constructor(damage) {
-    this.damLocation = damage.location;
-    this.damNew = damage.new;
-    this.damType = damage.type;
-    this.damDate = damage.date;
-    this.damAcuteAction = damage.acuteAction;
-    this.damDescription = damage.description;
-    this.damPhotos = damage.photos;
+    this.damLocation = damage ? damage.damLocation : "";
+    this.damNew = damage ? damage.damNew : "";
+    this.damType = damage ? damage.damType : "";
+    this.damDate = damage ? damage.damDate : "";
+    this.damAcuteAction = damage ? damage.damAcuteAction : "";
+    this.damDescription = damage ? damage.Description : "";
+    this.damPhotos = damage ? damage.Photos : "";
   }
 }
 
 export class MaintenanceModel {
   constructor(maintenance) {
-    this.maintLocation = maintenance.location;
-    this.maintType = maintenance.type;
-    this.maintAcuteAction = maintenance.acuteAction;
-    this.maintCost = maintenance.indicationOfCost;
-    this.maintPhotos = maintenance.photos;
+    this.maintLocation = maintenance ? maintenance.maintLocation : "";
+    this.maintType = maintenance ? maintenance.maintType : "";
+    this.maintAcuteAction = maintenance ? maintenance.maintAcuteAction : "";
+    this.maintCost = maintenance ? maintenance.maintCost : "";
+    this.maintPhotos = maintenance ? maintenance.maintPhotos : "";
   }
 }
 
 export class InstallationModel {
-  constructor(
-    installations
-  ) {
-    this.techLocation = installations.location;
-    this.techType = installations.type;
-    this.techMalfunction = installations.reportedMalfunction;
-    this.techTestProcedure = installations.testProcedure;
-    this.techApproved = installations.approved;
-    this.techComments = installations.comments;
-    this.techPhotos = installations.photos;
+  constructor(installations) {
+    this.techLocation = installations ? installations.techLocation : "";
+    this.techType = installations ? installations.techType : "";
+    this.techMalfunction = installations
+      ? installations.techMalfunction
+      : "";
+    this.techTestProcedure = installations ? installations.techTestProcedure : "";
+    this.techApproved = installations ? installations.techApproved : "";
+    this.techComments = installations ? installations.techComments : "";
+    this.techPhotos = installations ? installations.techPhotos : "";
   }
 }
 
 export class ModificationsModel {
-  constructor(
-    modifications
-  ) {
-    this.modiSituation = modifications.existingSituation;
-    this.modiLocation = modifications.location;
-    this.modiPerformedBy = modifications.performedBy;
-    this.modiDescription = modifications.description;
-    this.modiAction = modifications.action;
-    this.modComments = modifications.comments;
-    this.modPhotos = modifications.photos;
+  constructor(modifications) {
+    this.modiSituation = modifications ? modifications.modiSituation : "";
+    this.modiLocation = modifications ? modifications.modiLocation : "";
+    this.modiPerformedBy = modifications ? modifications.modiPerformedBy : "";
+    this.modiDescription = modifications ? modifications.modiDescription : "";
+    this.modiAction = modifications ? modifications.modiAction : "";
+    this.modComments = modifications ? modifications.modComments : "";
+    this.modPhotos = modifications ? modifications.modPhotos : "";
   }
 }
