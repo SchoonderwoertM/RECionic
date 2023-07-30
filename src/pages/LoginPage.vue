@@ -75,22 +75,23 @@ export default {
             "$2b$10$xGY57xK/yyF20/AcOpvLJuWh3MnrWeuQZG60ykSCOe49wS5oQ0tw.";
           const username = JSON.stringify(this.input.username);
           const password = JSON.stringify(this.input.password);
-          
-          const response = await fetch(url, {
+          const options = {
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
               "X-Master-Key": key,
               "X-JSON-Path": `$.users[?(@.username==${username} && @.password==${password})]`,
             },
-          });
+          };
+
+          const response = await fetch(url, options);
           const user = await response.json();
-          if (response.status === 200 && user.record[0]) {
-            this.$store.commit("SET_LOGGEDIN", true);
+          if (response.ok && user.record[0]) {
             this.$store.commit("SET_USER", user.record[0]);
 
             const randomNumber =
               Math.floor(Math.random() * (100000 - 10000)) + 10000;
-            localStorage.setItem("Authentication", randomNumber);
+            localStorage.setItem("AuthenticationNumber", randomNumber);
             this.presentToast(randomNumber);
             this.$router.replace("/authentication");
           } else {
@@ -100,7 +101,6 @@ export default {
           console.log(error);
         }
       } else {
-        this.$store.commit("SET_LOGGEDIN", false);
         this.output = "Gebruikersnaam en wachtwoord mogen niet leeg zijn";
       }
     },

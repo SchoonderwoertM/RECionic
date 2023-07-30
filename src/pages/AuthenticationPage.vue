@@ -58,17 +58,16 @@ export default {
   methods: {
     authenticate() {
       //make sure authenticationNumber is not empty
-      const authenticationNumber = localStorage.getItem("Authentication");
+      const authenticationNumber = localStorage.getItem("AuthenticationNumber");
       if (this.authenticationNumber != "") {
         if (this.authenticationNumber == authenticationNumber) {
           //stores true to the set_authentication to the set_authentication
-          this.$store.commit("SET_AUTHENTICATION", true);
           sessionStorage.setItem("Authenticated", true);
           this.authenticationNumber = "";
           this.$router.push("/home");
         }
       } else {
-        this.$store.commit("SET_AUTHENTICATION", false);
+        sessionStorage.setItem("Authenticated", false);
         this.output = "Verificatiecode verplicht";
       }
     },

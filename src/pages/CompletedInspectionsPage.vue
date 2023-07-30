@@ -18,7 +18,7 @@ export default {
   components: { InspectionsList, IonLabel },
   created() {
     if (!this.$store.getters.getInspections.length) {
-      this.$store.dispatch("fetchInspections");
+      this.$store.dispatch("getInspections");
     }
   },
   computed: {

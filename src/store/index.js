@@ -38,18 +38,20 @@ const store = createStore({
     },
   },
   actions: {
-    async fetchInspections({ commit }) {
+    async getInspections({ commit }) {
       const inspections = [];
       try {
         commit("IS_LOADING", true);
-        const response = await fetch(url, {
-          headers: {
-            "Content-Type": "application/json",
-            "X-Master-Key": key,
-          },
-        });
-        const jsonData = await response.json();
-        const result = jsonData.record;
+        const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key": key,
+        },
+      };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        const result = data.record;
 
         for (let i = 0; i < result.length; i++) {
           inspections.push(
