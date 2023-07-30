@@ -102,10 +102,10 @@ const store = createStore({
     getUser(state) {
       return state.user;
     },
-    inspections(state) {
+    getInspections(state) {
       return state.inspections;
     },
-    inspection(state) {
+    getInspection(state) {
       return (inspectionId) => {
         const result = state.inspections.find(function (inspection) {
           return inspection.id == inspectionId;
@@ -113,7 +113,7 @@ const store = createStore({
         return result;
       };
     },
-    loading(state) {
+    isLoading(state) {
       return state.loading;
     },
   },

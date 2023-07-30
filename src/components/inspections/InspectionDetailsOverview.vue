@@ -11,7 +11,7 @@
       </h2></ion-card-subtitle
     >
     <ion-card-content>
-      <ion-button :router-link="`/editReport/${inspection.id}`"
+      <ion-button :router-link="`/editInspection/${inspection.id}`"
         >Aanpassen</ion-button
       >
       <ion-list v-if="inspection.inspections[0].damageReport" lines="none" class="ion-list">

@@ -1,5 +1,5 @@
 <template>
-  <ion-card :router-link="`/inspection/${inspection.id}`">
+  <ion-card :router-link="`/inspectionDetails/${inspection.id}`">
     <ion-card-content>
       <p>{{ inspection.inspections[0].date }}</p>
       <h2>

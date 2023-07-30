@@ -23,13 +23,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/inspection/:id",
+    path: "/inspectionDetails/:id",
     component: () => import("../pages/InspectionDetailsPage.vue"),
   },
   {
-    path: '/editReport/:id',
-    name: 'EditReport',
-    component: () => import("../pages/EditReportPage.vue"),
+    path: '/editInspection/:id',
+    name: 'EditInspection',
+    component: () => import("../pages/EditInspectionPage.vue"),
   },
   {
     path: "/documents",

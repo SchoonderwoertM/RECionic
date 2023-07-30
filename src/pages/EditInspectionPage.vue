@@ -46,10 +46,10 @@
 </template>
 
 <script>
-import damageReport from "@/components/reports/damageReport.vue";
-import maintenanceReport from "@/components/reports/maintenanceReport.vue";
-import installationsReport from "@/components/reports/installationsReport.vue";
-import modificationReport from "@/components/reports/modificationsReport.vue";
+import damageReport from "@/components/inspectionReports/damageReport.vue";
+import maintenanceReport from "@/components/inspectionReports/maintenanceReport.vue";
+import installationsReport from "@/components/inspectionReports/installationsReport.vue";
+import modificationReport from "@/components/inspectionReports/modificationsReport.vue";
 
 import {
   IonSpinner,
@@ -84,16 +84,16 @@ export default {
   },
   computed: {
     loadedInspection() {
-      return this.$store.getters.inspection(parseInt(this.inspectionId));
+      return this.$store.getters.getInspection(parseInt(this.inspectionId));
     },
     loading() {
-      return this.$store.getters.loading;
+      return this.$store.getters.isLoading;
     },
   },
   methods: {
     updateReport() {
       this.$store.dispatch("updateReport", false);
-      // this.$router.go(-2);
+      this.$router.go(-2);
     },
   },
 };

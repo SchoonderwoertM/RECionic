@@ -6,7 +6,6 @@
       </ion-label>
       <documents-list
         :documents="documents"
-        class="pagePadding"
       ></documents-list>
     </div>
   </base-layout>

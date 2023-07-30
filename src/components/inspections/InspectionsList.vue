@@ -10,13 +10,12 @@
 
 <script>
 import InspectionListItem from "./InspectionsListItem.vue";
-import { IonList, IonSpinner } from "@ionic/vue";
+import { IonSpinner } from "@ionic/vue";
 
 export default {
-  props: ["inspections",],
+  props: ["inspections"],
   components: {
     InspectionListItem,
-    IonList,
     IonSpinner,
   },
   computed: {

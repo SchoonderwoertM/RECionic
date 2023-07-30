@@ -17,7 +17,6 @@
 
 <script>
 import {
-  IonItem,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -30,7 +29,6 @@ import { chevronDownOutline, chevronUpOutline } from "ionicons/icons";
 export default {
   props: ["document"],
   components: {
-    IonItem,
     IonCard,
     IonCardContent,
     IonCardHeader,

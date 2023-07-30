@@ -75,6 +75,7 @@ export default {
             "$2b$10$xGY57xK/yyF20/AcOpvLJuWh3MnrWeuQZG60ykSCOe49wS5oQ0tw.";
           const username = JSON.stringify(this.input.username);
           const password = JSON.stringify(this.input.password);
+          
           const response = await fetch(url, {
             headers: {
               "Content-Type": "application/json",
@@ -92,8 +93,7 @@ export default {
             localStorage.setItem("Authentication", randomNumber);
             this.presentToast(randomNumber);
             this.$router.replace("/authentication");
-          }
-          else{
+          } else {
             this.output = "Gebruikersnaam en/of wachtwoord onjuist";
           }
         } catch (error) {

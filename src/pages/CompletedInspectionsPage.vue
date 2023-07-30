@@ -17,13 +17,13 @@ export default {
   name: "CompletedInspections",
   components: { InspectionsList, IonLabel },
   created() {
-    if (!this.$store.getters.inspections.length) {
+    if (!this.$store.getters.getInspections.length) {
       this.$store.dispatch("fetchInspections");
     }
   },
   computed: {
     inspections() {
-      const inspections = this.$store.getters.inspections;
+      const inspections = this.$store.getters.getInspections;
       return inspections.filter((inspection) => inspection.completed);
     },
   },

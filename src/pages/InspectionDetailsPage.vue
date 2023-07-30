@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import InspectionOverview from "@/components/inspections/InspectionOverview.vue";
+import InspectionOverview from "@/components/inspections/InspectionDetailsOverview.vue";
 import { IonLabel } from "@ionic/vue";
 
 export default {
@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     loadedInspection() {
-      return this.$store.getters.inspection(parseInt(this.inspectionId));
+      return this.$store.getters.getInspection(parseInt(this.inspectionId));
     },
   },
 };
