@@ -1,9 +1,9 @@
 <template>
   <base-layout page-default-back-link="/completedInspections">
     <div class="pageContent">
-      <h2 v-if="!loadedInspection">
+      <p v-if="!loadedInspection">
         Kan de inspectie met het opgegeven id niet vinden.
-      </h2>
+      </p>
       <inspection-overview
         v-else
         :inspection="loadedInspection"

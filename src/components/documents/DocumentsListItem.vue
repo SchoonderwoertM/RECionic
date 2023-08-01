@@ -27,7 +27,9 @@ import {
 import { chevronDownOutline, chevronUpOutline } from "ionicons/icons";
 
 export default {
-  props: ["document"],
+  props: {
+    document: { type: Object, required: true },
+  },
   components: {
     IonCard,
     IonCardContent,

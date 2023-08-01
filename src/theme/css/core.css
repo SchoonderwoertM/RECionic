@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-h1 {
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3{
+  font-family: 'Archivo Black', sans-serif;
   color: var(--ion-color-primary);
 }
 
 a {
   text-decoration: none;
-}
-
-ion-header,
-ion-footer {
-  --ion-background-color: var(--ion-color-primary);
 }
 
 ion-spinner {
@@ -26,17 +27,6 @@ ion-content{
   --background: var(--ion-color-secondary);
 }
 
-/*Header*/
-.logoutButton{
-  --background: var(--ion-color-primary);
-}
-
-/*Page Content*/
-.pageContent{
-  max-width: 500px;
-  margin: 5rem auto;
-}
-
 /*Ion Card*/
 ion-card {
   background-color: var(--ion-color-secondary-tint);
@@ -44,6 +34,7 @@ ion-card {
 }
 
 ion-card-title {
+  font-family: 'Archivo Black', sans-serif;
   --color: var(--ion-color-secondary-contrast);
 }
 
@@ -55,6 +46,12 @@ ion-card-content {
   color: var(--ion-color-primary-contrast);
 }
 /*End Ion Card*/
+
+/*Page Content*/
+.pageContent{
+  max-width: 500px;
+  margin: 5rem auto;
+}
 
 /*List*/
 .ion-list {
@@ -71,6 +68,11 @@ ion-item {
 /*End list*/
 
 /*Base Layout*/
+ion-header,
+ion-footer {
+  --ion-background-color: var(--ion-color-primary);
+}
+
 .logo {
   display: inline-block;
   height: 95px;
@@ -78,6 +80,10 @@ ion-item {
 
 ion-back-button {
   color: var(--ion-color-secondary);
+}
+
+.logoutButton{
+  --background: var(--ion-color-primary);
 }
 
 #footerButtons {
@@ -115,3 +121,4 @@ ion-back-button {
   justify-content: space-between;
 }
 /*End Documents*/
+

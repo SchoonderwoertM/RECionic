@@ -5,20 +5,12 @@ const key = "$2b$10$xGY57xK/yyF20/AcOpvLJuWh3MnrWeuQZG60ykSCOe49wS5oQ0tw.";
 
 const store = createStore({
   state: {
-    loggedIn: false,
-    authenticated: false,
     user: {},
     inspections: [],
     inspection: {},
     loading: false,
   },
   mutations: {
-    SET_LOGGEDIN(state, loggedIn) {
-      state.loggedIn = loggedIn;
-    },
-    SET_AUTHENTICATION(state, authenticated) {
-      state.authenticated = authenticated;
-    },
     SET_USER(state, user) {
       state.user = user;
     },
@@ -43,12 +35,12 @@ const store = createStore({
       try {
         commit("IS_LOADING", true);
         const options = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Master-Key": key,
-        },
-      };
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key": key,
+          },
+        };
         const response = await fetch(url, options);
         const data = await response.json();
         const result = data.record;
@@ -59,7 +51,7 @@ const store = createStore({
               result[i].id,
               result[i].address,
               result[i].inspections,
-              result[i].completed,
+              result[i].completed
             )
           );
         }
@@ -95,12 +87,6 @@ const store = createStore({
     },
   },
   getters: {
-    isUserAuthenticated(state) {
-      return state.authenticated;
-    },
-    isUserLoggedIn(state) {
-      return state.loggedIn;
-    },
     getUser(state) {
       return state.user;
     },
@@ -114,6 +100,10 @@ const store = createStore({
         });
         return result;
       };
+    },
+    //sorts inspections on date
+    getSortedInspections(state) {
+      return state.inspections.sort((a,b) => new Date(b.inspections[0].date) - new Date(a.inspections[0].date));
     },
     isLoading(state) {
       return state.loading;

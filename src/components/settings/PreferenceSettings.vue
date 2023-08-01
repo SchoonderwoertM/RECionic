@@ -1,7 +1,7 @@
 <template>
   <ion-card>
     <ion-card-header>
-      <ion-card-title> <h2>Voorkeuren</h2></ion-card-title>
+      <ion-card-title>Voorkeuren</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list class="ion-list">
@@ -31,7 +31,9 @@ import {
 } from "@ionic/vue";
 
 export default {
-  props: ["toggleTheme"],
+  props: {
+    toggleTheme: { type: Function, required: true },
+  },
   components: {
     IonList,
     IonItem,
@@ -39,7 +41,7 @@ export default {
     IonCardHeader,
     IonCardTitle,
     IonCardContent,
-    IonToggle
+    IonToggle,
   },
 };
 </script>

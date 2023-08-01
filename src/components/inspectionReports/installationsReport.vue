@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header color="primary">
-      <ion-label>Technische installaties</ion-label>
+      <ion-label><h2>Technische installaties</h2></ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -72,11 +72,13 @@ import {
   IonCheckbox,
   IonSelect,
   IonSelectOption,
-  IonButton
+  IonButton,
 } from "@ionic/vue";
 
 export default {
-  props: ["installationsReport"],
+  props: {
+    installationsReport: { type: Object, required: true },
+  },
   components: {
     IonList,
     IonItem,
@@ -86,7 +88,7 @@ export default {
     IonCheckbox,
     IonSelect,
     IonSelectOption,
-    IonButton
+    IonButton,
   },
 };
 </script>

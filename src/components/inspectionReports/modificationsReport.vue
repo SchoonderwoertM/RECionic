@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header color="primary">
-      <ion-label>Modificaties</ion-label>
+      <ion-label><h2>Modificaties</h2></ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Bestaande situatie: </ion-label>
@@ -18,7 +18,7 @@
     <ion-item
       ><ion-label position="fixed">Uitgevoerd door: </ion-label>
       <ion-select
-      aria-label="Uitgevoerd door"
+        aria-label="Uitgevoerd door"
         placeholder="Selecteer"
         v-model="modificationsReport.modiPerformedBy"
       >
@@ -43,7 +43,7 @@
         v-model="modificationsReport.modiAction"
       ></ion-input>
       <ion-select
-      aria-label="Te ondernemen actie"
+        aria-label="Te ondernemen actie"
         placeholder="Selecteer"
         v-model="modificationsReport.modiAction"
       >
@@ -86,7 +86,9 @@ import {
 } from "@ionic/vue";
 
 export default {
-  props: ["modificationsReport"],
+  props: {
+    modificationsReport: { type: Object, required: true },
+  },
   components: {
     IonList,
     IonItem,

@@ -1,7 +1,7 @@
 <template>
   <ion-card>
     <ion-card-header>
-      <ion-card-title> <h2>Account instellingen</h2></ion-card-title>
+      <ion-card-title>Account instellingen</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list class="ion-list">
@@ -75,7 +75,9 @@ import {
 } from "@ionic/vue";
 
 export default {
-  props: ["user"],
+  props: {
+    user: { type: Object, required: true },
+  },
   components: {
     IonImg,
     IonThumbnail,

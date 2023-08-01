@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header color="primary">
-      <ion-label>Schade</ion-label>
+      <ion-label><h2>Schade</h2></ion-label>
     </ion-list-header>
     <ion-item>
       <ion-label position="fixed">Locatie:</ion-label>
@@ -13,11 +13,15 @@
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Nieuwe schade:</ion-label>
-      <ion-checkbox aria-label="Nieuwe schade" v-model="damageReport.damNew"></ion-checkbox>
+      <ion-checkbox
+        aria-label="Nieuwe schade"
+        v-model="damageReport.damNew"
+      ></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Soort schade:</ion-label>
-      <ion-select aria-label="Soort schade"
+      <ion-select
+        aria-label="Soort schade"
         placeholder="Selecteer"
         v-model="damageReport.damType"
       >
@@ -41,7 +45,10 @@
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Acute actie vereist:</ion-label>
-      <ion-checkbox aria-label="Acute actie vereist" v-model="damageReport.damAcuteAction"></ion-checkbox>
+      <ion-checkbox
+        aria-label="Acute actie vereist"
+        v-model="damageReport.damAcuteAction"
+      ></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Omschrijving:</ion-label>
@@ -70,7 +77,9 @@ import {
 } from "@ionic/vue";
 
 export default {
-  props: ["damageReport"],
+  props: {
+    damageReport: { type: Object, required: true },
+  },
   components: {
     IonList,
     IonItem,

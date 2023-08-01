@@ -7,7 +7,7 @@
           src="src\theme\images\logo.png"
           alt="Real estate care logo"
         />
-        <ion-card-title> Verificatie </ion-card-title>
+        <ion-card-title>Verificatie</ion-card-title>
       </ion-card-header>
       <ion-card-content
         ><ion-input

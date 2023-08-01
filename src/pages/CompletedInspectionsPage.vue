@@ -24,8 +24,9 @@ export default {
   },
   computed: {
     completedInspections() {
-      const inspections = this.$store.getters.getInspections;
-      return inspections.filter((inspection) => inspection.completed);
+      const sortedInspections = this.$store.getters.getSortedInspections;
+      //filter completed inspection
+      return sortedInspections.filter((inspection) => inspection.completed);
     },
   },
 };

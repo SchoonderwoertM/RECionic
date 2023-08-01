@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header color="primary">
-      <ion-label>Achterstallig onderhoud</ion-label>
+      <ion-label><h2>Achterstallig onderhoud</h2></ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -13,7 +13,11 @@
     </ion-item>
     <ion-item
       ><ion-label position="fixed">Soort onderhoud:</ion-label>
-      <ion-select aria-label="Soort onderhoud" placeholder="Selecteer" v-model="maintenanceReport.maintType">
+      <ion-select
+        aria-label="Soort onderhoud"
+        placeholder="Selecteer"
+        v-model="maintenanceReport.maintType"
+      >
         <ion-select-option value="schilderwerk">Schilderwerk</ion-select-option>
         <ion-select-option value="houtrot">Houtrot</ion-select-option>
         <ion-select-option value="elektra">Elektra</ion-select-option>
@@ -30,7 +34,11 @@
     </ion-item>
     <ion-item
       ><ion-label position="fixed">Kostenindicatie: </ion-label>
-      <ion-select aria-label="Kostenindicatie" placeholder="Selecteer" v-model="maintenanceReport.maintCost">
+      <ion-select
+        aria-label="Kostenindicatie"
+        placeholder="Selecteer"
+        v-model="maintenanceReport.maintCost"
+      >
         <ion-select-option value="0-500">0-500</ion-select-option>
         <ion-select-option value="500-1.500">500-1.500</ion-select-option>
         <ion-select-option value="1.500+">Elektra</ion-select-option>
@@ -57,7 +65,9 @@ import {
 } from "@ionic/vue";
 
 export default {
-  props: ["maintenanceReport"],
+  props: {
+    maintenanceReport: { type: Object, required: true },
+  },
   components: {
     IonList,
     IonItem,

@@ -2,10 +2,10 @@
   <ion-card :router-link="`/inspectionDetails/${inspection.id}`">
     <ion-card-content>
       <p>{{ inspection.inspections[0].date }}</p>
-      <h2>
+      <p>
         {{ inspection.address.street }} {{ inspection.address.housenumber }},
         {{ inspection.address.residence }}
-      </h2>
+      </p>
     </ion-card-content>
   </ion-card>
 </template>
@@ -14,7 +14,9 @@
 import { IonCard, IonCardContent } from "@ionic/vue";
 
 export default {
-  props: ["inspection"],
+  props: {
+    inspection: { type: Object, required: true },
+  },
   components: {
     IonCard,
     IonCardContent,

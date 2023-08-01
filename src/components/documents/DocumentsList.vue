@@ -13,7 +13,9 @@ import DocumentsListItem from "@/components/documents/DocumentsListItem.vue";
 import { IonList } from "@ionic/vue";
 
 export default {
-  props: ["documents"],
+  props: {
+    documents: { type: Object, required: true },
+  },
   components: {
     DocumentsListItem,
     IonList,
