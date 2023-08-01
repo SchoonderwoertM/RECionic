@@ -10,21 +10,21 @@
         <ion-card-title>Log In</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-input
-          type="text"
-          v-model="input.username"
-          placeholder="Gebruikersnaam"
-          required
-        ></ion-input>
-        <ion-input
-          type="password"
-          v-model="input.password"
-          placeholder="Wachtwoord"
-          required
-        ></ion-input>
-        <ion-button type="submit" expand="block" @click.prevent="login()"
-          >Log in</ion-button
-        >
+        <form @submit.prevent="login">
+          <ion-input
+            type="text"
+            v-model="input.username"
+            placeholder="Gebruikersnaam"
+            required
+          ></ion-input>
+          <ion-input
+            type="password"
+            v-model="input.password"
+            placeholder="Wachtwoord"
+            required
+          ></ion-input>
+          <ion-button type="submit" expand="block">Log in</ion-button>
+        </form>
         <h3>{{ this.output }}</h3>
       </ion-card-content>
     </ion-card>

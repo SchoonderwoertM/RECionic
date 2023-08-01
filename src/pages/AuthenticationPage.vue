@@ -11,12 +11,12 @@
       </ion-card-header>
       <ion-card-content
         ><ion-input
-          type="text"
+          type="number"
           v-model="authenticationNumber"
           placeholder="Verificatiecode"
           required
         ></ion-input>
-        <ion-button type="submit" expand="block" @click="authenticate()"
+        <ion-button type="submit" expand="block" @click="authenticate"
           >Log in</ion-button
         >
         <h3>{{ this.output }}</h3>

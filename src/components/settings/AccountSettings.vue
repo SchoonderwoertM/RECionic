@@ -18,6 +18,7 @@
             <ion-label position="fixed">Voornaam:</ion-label>
             <ion-input
               aria-label="Voornaam"
+              type="text"
               v-model="user.firstname"
             ></ion-input>
           </ion-item>
@@ -25,6 +26,7 @@
             <ion-label position="fixed">Achternaam:</ion-label>
             <ion-input
               aria-label="Achternaam"
+              type="text"
               v-model="user.lastname"
             ></ion-input>
           </ion-item>
@@ -32,6 +34,7 @@
             <ion-label position="fixed">Telefoonnummer:</ion-label>
             <ion-input
               aria-label="Telefoonnummer"
+              type="tel"
               v-model="user.phonenumber"
             ></ion-input>
           </ion-item>
@@ -39,6 +42,7 @@
             <ion-label position="fixed">Emailadres:</ion-label>
             <ion-input
               aria-label="Emailadres"
+              type="email"
               v-model="user.emailaddress"
             ></ion-input>
           </ion-item>
@@ -46,6 +50,7 @@
             <ion-label position="fixed">Gebruikersnaam:</ion-label>
             <ion-input
               aria-label="Gebruikersnaam"
+              type="text"
               v-model="user.username"
             ></ion-input>
           </ion-item>
@@ -53,6 +58,7 @@
             <ion-label position="fixed">Wachtwoord:</ion-label>
             <ion-input
               aria-label="Wachtwoord"
+              type="password"
               v-model="user.password"
             ></ion-input>
           </ion-item>
