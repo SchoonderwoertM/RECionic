@@ -29,7 +29,9 @@ export default {
   },
   methods: {
     toggleTheme() {
-      this.theme = this.theme === "lightMode" ? "" : "lightMode"; //toggles theme value
+      //toggles theme value
+      this.theme = this.theme === "lightMode" ? "" : "lightMode"; 
+      //sets the data-theme attribute
       document.documentElement.setAttribute("data-theme", this.theme); // sets the data-theme attribute
     },
   },

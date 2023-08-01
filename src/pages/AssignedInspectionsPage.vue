@@ -4,7 +4,7 @@
       <ion-label>
         <h1>Toegewezen rapportages</h1>
       </ion-label>
-      <inspections-list :inspections="inspections"></inspections-list>
+      <inspections-list :inspections="assignedInspections"></inspections-list>
     </div>
   </base-layout>
 </template>
@@ -22,7 +22,7 @@ export default {
     }
   },
   computed: {
-    inspections() {
+    assignedInspections() {
       const inspections = this.$store.getters.getInspections;
       return inspections.filter((inspection) => !inspection.completed);
     },

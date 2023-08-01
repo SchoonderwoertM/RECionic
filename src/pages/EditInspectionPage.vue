@@ -93,6 +93,7 @@ export default {
   methods: {
     updateReport() {
       this.$store.dispatch("updateReport", false);
+      //go back to the overview of the inspections. This can be the overview of the completed or the assigned inspections.
       this.$router.go(-2);
     },
   },

@@ -25,11 +25,13 @@ const routes = [
   {
     path: "/inspectionDetails/:id",
     component: () => import("../pages/InspectionDetailsPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: '/editInspection/:id',
     name: 'EditInspection',
     component: () => import("../pages/EditInspectionPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/documents",
@@ -41,16 +43,19 @@ const routes = [
     path: "/settings",
     name: "settings",
     component: () => import("../pages/SettingsPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/notifications",
     name: "notifications",
     component: () => import("../pages/NotificationsPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/contact",
     name: "contact",
     component: () => import("../pages/ContactPage.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/",
@@ -73,8 +78,10 @@ const router = createRouter({
   routes,
 });
 
+//checks if user is authenticated on page change
 router.beforeEach((to, from, next) => {
   const isAuthenticated = sessionStorage.getItem("Authenticated") == "true";
+  //if not autheniticated redirect to loginpage
   if (to.meta.requiresAuth && !isAuthenticated) {
     next("/login");
   } else {

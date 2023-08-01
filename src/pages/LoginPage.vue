@@ -68,6 +68,7 @@ export default {
   },
   methods: {
     async login() {
+      //check if username and password are not empty
       if (this.input.username != "" && this.input.password != "") {
         try {
           const url = "https://api.jsonbin.io/v3/b/64c279ed8e4aa6225ec5e62f";
@@ -86,9 +87,10 @@ export default {
 
           const response = await fetch(url, options);
           const user = await response.json();
+          //check if user is present
           if (response.ok && user.record[0]) {
             this.$store.commit("SET_USER", user.record[0]);
-
+            //create random verificationcode
             const randomNumber =
               Math.floor(Math.random() * (100000 - 10000)) + 10000;
             localStorage.setItem("AuthenticationNumber", randomNumber);

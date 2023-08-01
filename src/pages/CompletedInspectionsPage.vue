@@ -4,7 +4,7 @@
       <ion-label>
         <h1>Uitgevoerde inspecties</h1>
       </ion-label>
-      <inspections-list :inspections="inspections"></inspections-list>
+      <inspections-list :inspections="completedInspections"></inspections-list>
     </div>
   </base-layout>
 </template>
@@ -17,12 +17,13 @@ export default {
   name: "CompletedInspections",
   components: { InspectionsList, IonLabel },
   created() {
+    //check if inspections are already available in the store.
     if (!this.$store.getters.getInspections.length) {
       this.$store.dispatch("getInspections");
     }
   },
   computed: {
-    inspections() {
+    completedInspections() {
       const inspections = this.$store.getters.getInspections;
       return inspections.filter((inspection) => inspection.completed);
     },
