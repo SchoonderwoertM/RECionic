@@ -22,9 +22,9 @@
         placeholder="Selecteer"
         v-model="modificationsReport.modiPerformedBy"
       >
-        <ion-select-option value="huurder">Huurder</ion-select-option>
-        <ion-select-option value="aannemer">Aannemer</ion-select-option>
-        <ion-select-option value="onbekend">Onbekend</ion-select-option>
+        <ion-select-option value="Huurder">Huurder</ion-select-option>
+        <ion-select-option value="Aannemer">Aannemer</ion-select-option>
+        <ion-select-option value="Onbekend">Onbekend</ion-select-option>
       </ion-select></ion-item
     >
     <ion-item
@@ -37,22 +37,17 @@
     ></ion-item>
     <ion-item
       ><ion-label position="fixed">Te ondernemen actie: </ion-label>
-      <ion-input
-        aria-label="Te ondernemen actie"
-        type="text"
-        v-model="modificationsReport.modiAction"
-      ></ion-input>
       <ion-select
         aria-label="Te ondernemen actie"
         placeholder="Selecteer"
         v-model="modificationsReport.modiAction"
       >
-        <ion-select-option value="accepteren">Accepteren</ion-select-option>
-        <ion-select-option value="latenKeuren">Laten keuren</ion-select-option>
-        <ion-select-option value="latenVerwijderen"
+        <ion-select-option value="Accepteren">Accepteren</ion-select-option>
+        <ion-select-option value="Laten keuren">Laten keuren</ion-select-option>
+        <ion-select-option value="Laten verwijderen"
           >Laten verwijderen</ion-select-option
         >
-        <ion-select-option value="laten aanpassen en keuren"
+        <ion-select-option value="Laten aanpassen en keuren"
           >Laten aanpassen en keuren</ion-select-option
         >
       </ion-select></ion-item

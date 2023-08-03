@@ -25,10 +25,10 @@
         placeholder="Selecteer"
         v-model="damageReport.damType"
       >
-        <ion-select-option value="moedwillig">Moedwillig</ion-select-option>
-        <ion-select-option value="slijtage">Slijtage</ion-select-option>
-        <ion-select-option value="geweld">Geweld</ion-select-option>
-        <ion-select-option value="normaalGebruik"
+        <ion-select-option value="Moedwillig">Moedwillig</ion-select-option>
+        <ion-select-option value="Slijtage">Slijtage</ion-select-option>
+        <ion-select-option value="Geweld">Geweld</ion-select-option>
+        <ion-select-option value="Normaal gebruik"
           >Normaal gebruik</ion-select-option
         >
         <ion-select-option value="calamiteiten">Calamiteiten</ion-select-option>

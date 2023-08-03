@@ -18,11 +18,11 @@
         placeholder="Selecteer"
         v-model="maintenanceReport.maintType"
       >
-        <ion-select-option value="schilderwerk">Schilderwerk</ion-select-option>
-        <ion-select-option value="houtrot">Houtrot</ion-select-option>
-        <ion-select-option value="elektra">Elektra</ion-select-option>
-        <ion-select-option value="leidingwerk">Leidingwerk</ion-select-option>
-        <ion-select-option value="beglazing">Beglazing</ion-select-option>
+        <ion-select-option value="Schilderwerk">Schilderwerk</ion-select-option>
+        <ion-select-option value="Houtrot">Houtrot</ion-select-option>
+        <ion-select-option value="Elektra">Elektra</ion-select-option>
+        <ion-select-option value="Leidingwerk">Leidingwerk</ion-select-option>
+        <ion-select-option value="Beglazing">Beglazing</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item
@@ -40,8 +40,8 @@
         v-model="maintenanceReport.maintCost"
       >
         <ion-select-option value="0-500">0-500</ion-select-option>
-        <ion-select-option value="500-1.500">500-1.500</ion-select-option>
-        <ion-select-option value="1.500+">Elektra</ion-select-option>
+        <ion-select-option value="500-1500">500-1.500</ion-select-option>
+        <ion-select-option value="1500+">1500+</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item

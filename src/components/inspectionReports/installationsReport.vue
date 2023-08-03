@@ -18,13 +18,13 @@
         placeholder="Selecteer"
         v-model="installationsReport.techType"
       >
-        <ion-select-option value="koeling">Koeling</ion-select-option>
-        <ion-select-option value="verwarming">Verwarming</ion-select-option>
-        <ion-select-option value="luchtverversing"
+        <ion-select-option value="Koeling">Koeling</ion-select-option>
+        <ion-select-option value="Verwarming">Verwarming</ion-select-option>
+        <ion-select-option value="Luchtverversing"
           >Luchtverversing</ion-select-option
         >
-        <ion-select-option value="elektra">Elektra</ion-select-option>
-        <ion-select-option value="beveiliging">Beveiliging</ion-select-option>
+        <ion-select-option value="Elektra">Elektra</ion-select-option>
+        <ion-select-option value="Beveiliging">Beveiliging</ion-select-option>
       </ion-select></ion-item
     >
     <ion-item

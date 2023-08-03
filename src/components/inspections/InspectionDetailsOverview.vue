@@ -29,10 +29,14 @@
           >
         </ion-item>
         <ion-item>
-          <ion-label
-            >Nieuwe schade:
-            {{ inspection.inspections[0].damageReport.damNew }}</ion-label
-          >
+          <ion-label>Nieuwe schade:</ion-label>
+          <ion-icon
+            :icon="
+              inspection.inspections[0].damageReport.damNew
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label
@@ -47,12 +51,14 @@
           >
         </ion-item>
         <ion-item>
-          <ion-label
-            >Acute actie vereist:
-            {{
+          <ion-label>Acute actie vereist: </ion-label>
+          <ion-icon
+            :icon="
               inspection.inspections[0].damageReport.damAcuteAction
-            }}</ion-label
-          >
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label
@@ -94,13 +100,15 @@
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Acute actie vereist:
-            {{
+          ><ion-label>Acute actie vereist: </ion-label>
+          <ion-icon
+            :icon="
               inspection.inspections[0].maintenanceReport.maintAcuteAction
-            }}</ion-label
-          ></ion-item
-        >
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon
+        ></ion-item>
         <ion-item
           ><ion-label
             >Kostenindicatie:
@@ -151,13 +159,15 @@
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Goedgekeurd:
-            {{
+          ><ion-label>Goedgekeurd: </ion-label>
+          <ion-icon
+            :icon="
               inspection.inspections[0].installationsReport.techApproved
-            }}</ion-label
-          ></ion-item
-        >
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon
+        ></ion-item>
         <ion-item
           ><ion-label
             >Opmerkingen:
@@ -256,10 +266,16 @@ import {
   IonCardHeader,
   IonCardContent,
   IonButton,
+  IonIcon,
 } from "@ionic/vue";
+import { checkbox, squareOutline } from "ionicons/icons";
+
 export default {
   props: {
     inspection: { type: Object, required: true },
+  },
+  data() {
+    return { checkbox, squareOutline };
   },
   components: {
     IonLabel,
@@ -272,6 +288,7 @@ export default {
     IonCardHeader,
     IonCardContent,
     IonButton,
+    IonIcon,
   },
 };
 </script>
