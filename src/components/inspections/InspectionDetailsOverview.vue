@@ -11,7 +11,7 @@
       </h2></ion-card-subtitle
     >
     <ion-card-content>
-      <ion-button :router-link="`/editInspection/${inspection.id}`"
+      <ion-button :router-link="`/inspection/edit/${inspection.id}`"
         >Aanpassen</ion-button
       >
       <ion-list

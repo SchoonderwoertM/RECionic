@@ -13,33 +13,35 @@
             {{ loadedInspection.address.residence }}
           </h2></ion-card-subtitle
         >
-        <ion-label>Datum:</ion-label>
-        <ion-input
-          type="date"
-          v-model="loadedInspection.inspections[0].date"
-          required
-        />
         <ion-card-content>
-          <damageReport
-            :damageReport="loadedInspection.inspections[0].damageReport"
-          />
-          <maintenanceReport
-            :maintenanceReport="
-              loadedInspection.inspections[0].maintenanceReport
-            "
-          />
-          <installationsReport
-            :installationsReport="
-              loadedInspection.inspections[0].installationsReport
-            "
-          />
-          <modificationReport
-            :modificationsReport="
-              loadedInspection.inspections[0].modificationsReport
-            "
-          />
+          <form @submit.prevent="updateReports">
+            <ion-label>Datum:</ion-label>
+            <ion-input
+              type="date"
+              v-model="loadedInspection.inspections[0].date"
+              required
+            />
+            <damageReport
+              :damageReport="loadedInspection.inspections[0].damageReport"
+            />
+            <maintenanceReport
+              :maintenanceReport="
+                loadedInspection.inspections[0].maintenanceReport
+              "
+            />
+            <installationsReport
+              :installationsReport="
+                loadedInspection.inspections[0].installationsReport
+              "
+            />
+            <modificationReport
+              :modificationsReport="
+                loadedInspection.inspections[0].modificationsReport
+              "
+            />
+            <ion-button type="submit" expand="block">Opslaan</ion-button>
+          </form>
         </ion-card-content>
-          <ion-button @click="updateReport">Opslaan</ion-button>
       </ion-card>
     </div>
   </base-layout>
@@ -91,8 +93,8 @@ export default {
     },
   },
   methods: {
-    updateReport() {
-      this.$store.dispatch("updateReport", false);
+    updateReports() {
+      this.$store.dispatch("updateReports", false);
       //go back to the overview of the inspections. This can be the overview of the completed or the assigned inspections.
       this.$router.go(-2);
     },

@@ -11,24 +11,24 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/assignedInspections",
+    path: "/assigned-inspections",
     name: "assignedInspections",
     component: () => import("../pages/AssignedInspectionsPage.vue"),
     meta: { requiresAuth: true },
   },
   {
-    path: "/completedInspections",
+    path: "/completed-inspections",
     name: "completedInspections",
     component: () => import("../pages/CompletedInspectionsPage.vue"),
     meta: { requiresAuth: true },
   },
   {
-    path: "/inspectionDetails/:id",
+    path: "/inspection/:id",
     component: () => import("../pages/InspectionDetailsPage.vue"),
     meta: { requiresAuth: true },
   },
   {
-    path: '/editInspection/:id',
+    path: '/inspection/edit/:id',
     name: 'EditInspection',
     component: () => import("../pages/EditInspectionPage.vue"),
     meta: { requiresAuth: true },

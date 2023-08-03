@@ -62,7 +62,7 @@ export default {
       if (this.authenticationNumber != "") {
         if (this.authenticationNumber == authenticationNumber) {
           sessionStorage.setItem("Authenticated", true);
-          this.$router.push("/home");
+          this.$router.replace("/home");
         }
       } else {
         this.output = "Verificatiecode verplicht";

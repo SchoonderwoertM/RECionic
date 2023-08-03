@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <router-link to="/assignedInspections">
+          <router-link to="/assigned-inspections">
             <ion-card class="homeCard">
               <ion-icon :src="checkmarkOutline" class="homeCardIcon"></ion-icon>
               <ion-card-title>Toegewezen rapportages</ion-card-title>
@@ -11,7 +11,7 @@
           </router-link>
         </ion-col>
         <ion-col size="6">
-          <router-link to="/completedInspections">
+          <router-link to="/completed-inspections">
             <ion-card class="homeCard">
               <ion-icon :src="checkboxOutline" class="homeCardIcon"></ion-icon>
               <ion-card-title>Uitgevoerde rapportages</ion-card-title>

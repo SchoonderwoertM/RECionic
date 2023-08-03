@@ -62,7 +62,7 @@ const store = createStore({
         console.error(error);
       }
     },
-    async updateReport({ commit, state }) {
+    async updateReports({ commit, state }) {
       commit("IS_LOADING", true);
       const options = {
         method: "PUT",
