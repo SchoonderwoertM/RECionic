@@ -40,12 +40,10 @@ a {
 }
 /*End General HTML elements*/
 
-.textColorPrimaryContrast {
-  color: var(--ion-color-primary-contrast);
-}
-
 /*General ionic elements*/
 ion-spinner {
+  display: block;
+  margin: auto;
   width: 100px;
   height: 100px;
   color: var(--ion-color-primary);
@@ -65,16 +63,45 @@ ion-thumbnail {
   --size: 8rem;
 }
 
-ion-input.custom{
+ion-input.custom {
   --border-radius: 10px;
   --background: var(--ion-color-secondary-shade);
-  max-width: 20vw; 
+  max-width: 200px;
   margin-block-end: 0.5rem;
-  max-height: 1rem !important;
-  height: 1rem;
+  min-height: 35px !important;
 }
 
+.alert-wrapper{
+  background-color: var(--ion-color-secondary-shade) !important;
+}
+
+.alert-radio-label{
+  color: var(--ion-color-primary-contrast) !important;
+}
 /*End General ionic elements*/
+
+/*General Custom classes*/
+.label-fixed.sc-ion-label-md-h {
+  flex: 0 0 50vw;
+}
+
+.noBorder {
+  border: none;
+}
+
+.inspectionIcons {
+  color: var(--ion-color-primary);
+}
+
+.footerIcons:hover {
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.textColorPrimaryContrast {
+  color: var(--ion-color-primary-contrast);
+}
+/*End General Custom classes*/
 
 /*Ion Card*/
 ion-card {
@@ -104,8 +131,8 @@ ion-card-content {
 
 /*Page Content*/
 .pageContent {
-  max-width: 500px;
-  margin: 5rem auto;
+  max-width: 700px;
+  margin: 1rem auto;
 }
 
 /*List*/
@@ -124,7 +151,6 @@ ion-list-header {
 ion-item {
   --background: var(--ion-color-secondary-tint);
   --padding-start: 0;
-  overflow-y: visible;
 }
 /*End list*/
 
@@ -151,7 +177,12 @@ ion-back-button {
 /*End Base Layout*/
 
 /*Home*/
+#homeGrid {
+  max-width: 700px;
+  margin: 1rem auto;
+}
 .homeCard {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,6 +190,7 @@ ion-back-button {
   aspect-ratio: 1/1;
   padding: 10px;
   text-align: center;
+  margin: 0 0 10px 10px;
 }
 
 .homeCard:hover {
@@ -193,20 +225,3 @@ ion-back-button {
   font-size: 1.3rem;
 }
 /*End Documents*/
-
-.label-fixed.sc-ion-label-md-h {
-  flex: 0 0 50vw;
-}
-.noBorder{
-  border: none;
-}
-
-.inspectionIcons{
-  color:  var(--ion-color-primary);
-}
-
-.footerIcons:hover{
-  border-radius: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-

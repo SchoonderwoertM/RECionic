@@ -5,12 +5,11 @@
         <ion-card-title>Contact</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-list lines="none" class="ion-list" id="contactList">
-          <ion-item class="contactItem">Real Estate Care</ion-item>
-          <ion-item>Postbus 444 </ion-item>
-          <ion-item>2300 AK Leiden </ion-item><ion-item>071 751 00 52 </ion-item
-          ><ion-item>info@realestatecare.com </ion-item>
-        </ion-list>
+        <p>Real Estate Care</p>
+        <p>Postbus 444</p>
+        <p>2300 AK Leiden</p>
+        <p>071 751 00 52</p>
+        <p>info@realestatecare.com</p>
       </ion-card-content>
     </ion-card>
   </base-layout>

@@ -1,6 +1,6 @@
 <template>
   <base-layout>
-    <ion-grid>
+    <ion-grid id="homeGrid">
       <ion-row>
         <ion-col size="6">
           <router-link to="/assigned-inspections">
