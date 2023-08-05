@@ -14,9 +14,10 @@
           />
         </router-link>
         <ion-button
+          color="primary"
           slot="end"
           aria-label="uitloggen"
-          class="logoutButton ion-margin-end"
+          class="ion-margin-end"
           @click="logout()"
         >
           <ion-icon
@@ -31,10 +32,10 @@
       <slot />
     </ion-content>
     <ion-footer>
-      <ion-toolbar>
+      <ion-toolbar class="ion-padding-start ion-padding-end">
         <ion-buttons id="footerButtons">
           <router-link to="/notifications">
-            <ion-button>
+            <ion-button class="footerIcons">
               <ion-icon
                 :icon="notificationsOutline"
                 slot="icon-only"
@@ -42,12 +43,12 @@
             </ion-button>
           </router-link>
           <router-link to="/home">
-            <ion-button>
+            <ion-button class="footerIcons">
               <ion-icon :icon="homeOutline" slot="icon-only"></ion-icon>
             </ion-button>
           </router-link>
           <router-link to="/contact">
-            <ion-button>
+            <ion-button class="footerIcons">
               <ion-icon :icon="callOutline" slot="icon-only"></ion-icon>
             </ion-button>
           </router-link>

@@ -10,6 +10,7 @@
     <ion-item
       ><ion-label position="fixed">Locatie modificatie: </ion-label>
       <ion-input
+        class="custom ion-margin-top"
         aria-label="Locatie modificatie"
         type="text"
         v-model="modificationsReport.modiLocation"
@@ -30,6 +31,7 @@
     <ion-item
       ><ion-label position="fixed">Beschrijving modificatie: </ion-label>
       <ion-input
+        class="custom"
         aria-label="Beschrijving modificatie"
         type="text"
         v-model="modificationsReport.modiDescription"
@@ -55,27 +57,29 @@
     <ion-item
       ><ion-label position="fixed">Opmerkingen: </ion-label>
       <ion-input
+        class="custom"
         aria-label="Opmerkingen"
         type="text"
         v-model="modificationsReport.modComments"
       ></ion-input
     ></ion-item>
     <ion-item>
-      <ion-label>Foto's:</ion-label>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="modificationsReport.modPhoto1"
-        ></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="modificationsReport.modPhoto2"
-        ></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="modificationsReport.modPhoto1"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="modificationsReport.modPhoto2"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>

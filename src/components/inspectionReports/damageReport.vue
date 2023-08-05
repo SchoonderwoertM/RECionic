@@ -6,11 +6,12 @@
     <ion-item>
       <ion-label position="fixed">Locatie:</ion-label>
       <ion-input
+      class="custom ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="damageReport.damLocation"
         maxlength="50"
-      ></ion-input>
+      />
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Nieuwe schade:</ion-label>
@@ -39,6 +40,7 @@
     <ion-item>
       <ion-label position="fixed">Datum:</ion-label>
       <ion-input
+      class="custom"
         aria-label="Datum"
         type="date"
         v-model="damageReport.damDate"
@@ -54,6 +56,7 @@
     <ion-item>
       <ion-label position="fixed">Omschrijving:</ion-label>
       <ion-input
+      class="custom"
         aria-label="Omschrijving"
         type="text"
         v-model="damageReport.damDescription"
@@ -61,15 +64,22 @@
       ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Foto's:</ion-label>
-      <div>
-        <ion-input aria-label="Foto's" type="url" v-model="damageReport.damPhoto1"></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
-      <div>
-        <ion-input aria-label="Foto's" type="url" v-model="damageReport.damPhoto2"></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
+      <ion-input position="fixed"
+      class="custom ion-margin-end"
+        aria-label="Foto 1"
+        type="url"
+        v-model="damageReport.damPhoto1"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-input
+      class="custom ion-margin-end"
+        aria-label="Foto 2"
+        type="url"
+        v-model="damageReport.damPhoto2"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>
@@ -86,7 +96,7 @@ import {
   IonCheckbox,
   IonSelect,
   IonSelectOption,
-  IonButton
+  IonButton,
 } from "@ionic/vue";
 
 export default {
@@ -102,7 +112,7 @@ export default {
     IonCheckbox,
     IonSelect,
     IonSelectOption,
-    IonButton
+    IonButton,
   },
   methods: {
     async getPicture() {

@@ -6,7 +6,7 @@
           <router-link to="/assigned-inspections">
             <ion-card class="homeCard">
               <ion-icon :src="checkmarkOutline" class="homeCardIcon"></ion-icon>
-              <ion-card-title>Toegewezen rapportages</ion-card-title>
+              <ion-card-title class="homeCardTitle">Toegewezen rapportages</ion-card-title>
             </ion-card>
           </router-link>
         </ion-col>
@@ -14,7 +14,7 @@
           <router-link to="/completed-inspections">
             <ion-card class="homeCard">
               <ion-icon :src="checkboxOutline" class="homeCardIcon"></ion-icon>
-              <ion-card-title>Uitgevoerde rapportages</ion-card-title>
+              <ion-card-title class="homeCardTitle">Uitgevoerde rapportages</ion-card-title>
             </ion-card>
           </router-link>
         </ion-col>
@@ -24,7 +24,7 @@
           <router-link to="/documents">
             <ion-card class="homeCard">
               <ion-icon :src="folderOutline" class="homeCardIcon"></ion-icon>
-              <ion-card-title>Kennisbase</ion-card-title>
+              <ion-card-title class="homeCardTitle">Kennisbase</ion-card-title>
             </ion-card>
           </router-link>
         </ion-col>
@@ -32,7 +32,7 @@
           <router-link to="/settings">
             <ion-card class="homeCard">
               <ion-icon :src="settingsOutline" class="homeCardIcon"></ion-icon>
-              <ion-card-title>Instellingen</ion-card-title>
+              <ion-card-title class="homeCardTitle">Instellingen</ion-card-title>
             </ion-card>
           </router-link>
         </ion-col>

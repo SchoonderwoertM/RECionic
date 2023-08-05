@@ -6,6 +6,7 @@
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
       <ion-input
+        class="custom ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="maintenanceReport.maintLocation"
@@ -45,22 +46,23 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Foto's:</ion-label>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="maintenanceReport.maintPhoto1"
-        ></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="maintenanceReport.maintPhoto2"
-        ></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div></ion-item
-    >
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="maintenanceReport.maintPhoto1"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="maintenanceReport.maintPhoto2"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+    </ion-item>
   </ion-list>
 </template>
 
@@ -74,7 +76,7 @@ import {
   IonCheckbox,
   IonSelect,
   IonSelectOption,
-  IonButton
+  IonButton,
 } from "@ionic/vue";
 
 export default {
@@ -90,7 +92,7 @@ export default {
     IonCheckbox,
     IonSelect,
     IonSelectOption,
-    IonButton
+    IonButton,
   },
   methods: {
     async getPicture() {

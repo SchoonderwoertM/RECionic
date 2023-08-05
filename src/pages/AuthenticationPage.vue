@@ -1,15 +1,14 @@
 <template>
   <ion-page>
     <ion-card class="pageContent">
-      <ion-card-header>
+      <ion-card-header color="primary">
         <ion-img
           class="logo"
           src="src\theme\images\logo.png"
           alt="Real estate care logo"
         />
-        <ion-card-title>Verificatie</ion-card-title>
       </ion-card-header>
-      <ion-card-content
+      <ion-card-content class="ion-margin-vertical"
         ><ion-input
           type="number"
           v-model="authenticationNumber"
@@ -19,7 +18,7 @@
         <ion-button type="submit" expand="block" @click="authenticate"
           >Log in</ion-button
         >
-        <h3>{{ this.output }}</h3>
+        <ion-label color="warning">{{ this.output }}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-page>
@@ -35,6 +34,7 @@ import {
   IonInput,
   IonButton,
   IonImg,
+  IonLabel,
 } from "@ionic/vue";
 
 export default {
@@ -48,6 +48,7 @@ export default {
     IonInput,
     IonButton,
     IonImg,
+    IonLabel,
   },
   data() {
     return {

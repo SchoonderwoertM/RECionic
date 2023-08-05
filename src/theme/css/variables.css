@@ -10,7 +10,7 @@
   --ion-color-secondary-rgb: 20, 27, 31;
   --ion-color-secondary-contrast: #faf8f8;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #12181b;
+  --ion-color-secondary-shade: #535a5e;
   --ion-color-secondary-tint: #42484b;
 
   --ion-background-color: var(--ion-color-secondary);
@@ -22,6 +22,9 @@
   --ion-border-color: var(--ion-color-primary);
 
   --ion-toolbar-color: var(--ion-color-primary-contrast);
+
+	--ion-color-warning: #d8495c;
+	--ion-color-warning-rgb: 235,68,90;
 }
 
 [data-theme="lightMode"] {

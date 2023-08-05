@@ -1,15 +1,16 @@
 <template>
   <ion-page>
     <ion-card class="pageContent">
-      <ion-card-header>
-        <ion-img
-          class="logo"
-          src="src\theme\images\logo.png"
-          alt="Real estate care logo"
-        />
-        <ion-card-title>Log In</ion-card-title>
+      <ion-card-header color="primary"
+        ><div>
+          <ion-img
+            class="logo"
+            src="src\theme\images\logo.png"
+            alt="Real estate care logo"
+          />
+        </div>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="ion-margin-vertical">
         <form @submit.prevent="login">
           <ion-input
             type="text"
@@ -25,7 +26,7 @@
           ></ion-input>
           <ion-button type="submit" expand="block">Log in</ion-button>
         </form>
-        <h3>{{ this.output }}</h3>
+        <ion-label color="warning">{{ this.output }}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-page>
@@ -41,6 +42,7 @@ import {
   IonInput,
   IonButton,
   IonImg,
+  IonLabel,
   toastController,
 } from "@ionic/vue";
 
@@ -55,6 +57,7 @@ export default {
     IonInput,
     IonButton,
     IonImg,
+    IonLabel,
   },
 
   data() {

@@ -18,20 +18,20 @@ h3 {
   color: var(--ion-color-primary);
 }
 
-h1{
+h1 {
   font-size: 1.7rem;
   margin-block-end: 1.5rem;
 }
 
-h2{
+h2 {
   font-size: 1.5rem;
 }
 
-h3{
+h3 {
   font-size: 1.2rem;
 }
 
-p{
+p {
   font-size: 1rem;
 }
 
@@ -40,7 +40,7 @@ a {
 }
 /*End General HTML elements*/
 
-.textColorPrimaryContrast{
+.textColorPrimaryContrast {
   color: var(--ion-color-primary-contrast);
 }
 
@@ -48,6 +48,7 @@ a {
 ion-spinner {
   width: 100px;
   height: 100px;
+  color: var(--ion-color-primary);
 }
 
 ion-icon {
@@ -59,10 +60,20 @@ ion-content {
   --background: var(--ion-color-secondary);
 }
 
-ion-thumbnail{
-  --border-radius:5px;
-  --size:8rem;
+ion-thumbnail {
+  --border-radius: 5px;
+  --size: 8rem;
 }
+
+ion-input.custom{
+  --border-radius: 10px;
+  --background: var(--ion-color-secondary-shade);
+  max-width: 20vw; 
+  margin-block-end: 0.5rem;
+  max-height: 1rem !important;
+  height: 1rem;
+}
+
 /*End General ionic elements*/
 
 /*Ion Card*/
@@ -100,7 +111,7 @@ ion-card-content {
 /*List*/
 .ion-list {
   background-color: var(--ion-color-secondary-tint);
-  padding-block-end: 1.5rem;
+  padding-block-end: 3.5rem;
 }
 
 ion-list-header {
@@ -113,6 +124,7 @@ ion-list-header {
 ion-item {
   --background: var(--ion-color-secondary-tint);
   --padding-start: 0;
+  overflow-y: visible;
 }
 /*End list*/
 
@@ -129,10 +141,6 @@ ion-footer {
 
 ion-back-button {
   color: var(--ion-color-secondary);
-}
-
-.logoutButton {
-  --background: var(--ion-color-primary);
 }
 
 #footerButtons {
@@ -154,7 +162,12 @@ ion-back-button {
 }
 
 .homeCard:hover {
-  background-color: var(--ion-color-secondary-tint);
+  background-color: var(--ion-color-secondary-shade);
+}
+
+.homeCardTitle {
+  color: var(--ion-color-primary-contrast);
+  font-size: 1.3rem;
 }
 
 .homeCardIcon {
@@ -171,16 +184,29 @@ ion-back-button {
   align-items: center;
 }
 
-#documentCardHeader, #documentCardContent{
+#documentCardHeader,
+#documentCardContent {
   background: var(--ion-color-secondary-tint);
 }
 
-#documentTitle{
+#documentTitle {
   font-size: 1.3rem;
 }
 /*End Documents*/
 
+.label-fixed.sc-ion-label-md-h {
+  flex: 0 0 50vw;
+}
+.noBorder{
+  border: none;
+}
 
+.inspectionIcons{
+  color:  var(--ion-color-primary);
+}
 
-
+.footerIcons:hover{
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 

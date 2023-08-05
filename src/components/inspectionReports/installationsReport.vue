@@ -6,6 +6,7 @@
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
       <ion-input
+        class="custom ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="installationsReport.techLocation"
@@ -30,6 +31,7 @@
     <ion-item
       ><ion-label position="fixed">Gemelde storing:</ion-label>
       <ion-input
+        class="custom"
         aria-label="Gemelde storing"
         type="text"
         v-model="installationsReport.techMalfunction"
@@ -49,27 +51,30 @@
     <ion-item>
       <ion-label position="fixed">Opmerkingen: </ion-label>
       <ion-input
+        class="custom"
         aria-label="Opmerkingen"
         type="text"
         v-model="installationsReport.techComments"
       ></ion-input
     ></ion-item>
     <ion-item>
-      <ion-label>Foto's:</ion-label>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="installationsReport.techPhoto1"
-        ></ion-input>
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="installationsReport.techPhoto1"
+      >
+      </ion-input>
         <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
-      <div>
-        <ion-input aria-label="Foto's"
-          type="url"
-          v-model="installationsReport.techPhoto2"
-        ></ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
-      </div>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        class="custom ion-margin-end"
+        aria-label="Foto's"
+        type="url"
+        v-model="installationsReport.techPhoto2"
+      ></ion-input>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>

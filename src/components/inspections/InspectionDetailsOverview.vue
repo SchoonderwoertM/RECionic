@@ -11,7 +11,10 @@
       </h2></ion-card-subtitle
     >
     <ion-card-content>
-      <ion-button class="ion-margin-bottom" expand="block" :router-link="`/inspection/edit/${inspection.id}`"
+      <ion-button
+        class="ion-margin-bottom"
+        expand="block"
+        :router-link="`/inspection/edit/${inspection.id}`"
         >Aanpassen</ion-button
       >
       <ion-list
@@ -23,14 +26,15 @@
           <ion-label>Schade</ion-label>
         </ion-list-header>
         <ion-item>
-          <ion-label
-            >Locatie:
+          <ion-label>Locatie: </ion-label>
+          <ion-label>
             {{ inspection.inspections[0].damageReport.damLocation }}</ion-label
           >
         </ion-item>
         <ion-item>
           <ion-label>Nieuwe schade:</ion-label>
           <ion-icon
+            class="inspectionIcons"
             :icon="
               inspection.inspections[0].damageReport.damNew
                 ? checkbox
@@ -39,20 +43,21 @@
           ></ion-icon>
         </ion-item>
         <ion-item>
-          <ion-label
-            >Soort schade:
+          <ion-label>Soort schade: </ion-label>
+          <ion-label>
             {{ inspection.inspections[0].damageReport.damType }}</ion-label
           >
         </ion-item>
         <ion-item>
-          <ion-label
-            >Datum:
-            {{ inspection.inspections[0].damageReport.damDate }}</ion-label
-          >
+          <ion-label>Datum:</ion-label>
+          <ion-label>{{
+            inspection.inspections[0].damageReport.damDate
+          }}</ion-label>
         </ion-item>
         <ion-item>
           <ion-label>Acute actie vereist: </ion-label>
           <ion-icon
+            class="inspectionIcons"
             :icon="
               inspection.inspections[0].damageReport.damAcuteAction
                 ? checkbox
@@ -61,17 +66,22 @@
           ></ion-icon>
         </ion-item>
         <ion-item>
-          <ion-label
-            >Omschrijving:
+          <ion-label>Omschrijving: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].damageReport.damDescription
             }}</ion-label
           >
         </ion-item>
         <ion-item>
-          <ion-label
-            >Foto's:
-            {{ inspection.inspections[0].damageReport.damPhoto1 }}
+          <ion-label>Foto 1: </ion-label>
+          <ion-label>
+            {{ inspection.inspections[0].damageReport.damPhoto2 }}</ion-label
+          >
+        </ion-item>
+        <ion-item>
+          <ion-label>Foto 2: </ion-label>
+          <ion-label>
             {{ inspection.inspections[0].damageReport.damPhoto2 }}</ion-label
           >
         </ion-item>
@@ -85,16 +95,16 @@
           <ion-label>Achterstallig onderhoud</ion-label>
         </ion-list-header>
         <ion-item
-          ><ion-label
-            >Locatie:
+          ><ion-label>Locatie: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].maintenanceReport.maintLocation
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Soort onderhoud:
+          ><ion-label>Soort onderhoud: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].maintenanceReport.maintType
             }}</ion-label
@@ -103,6 +113,7 @@
         <ion-item
           ><ion-label>Acute actie vereist: </ion-label>
           <ion-icon
+            class="inspectionIcons"
             :icon="
               inspection.inspections[0].maintenanceReport.maintAcuteAction
                 ? checkbox
@@ -111,23 +122,24 @@
           ></ion-icon
         ></ion-item>
         <ion-item
-          ><ion-label
-            >Kostenindicatie:
+          ><ion-label calss="item-text-wrap">Kostenindicatie: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].maintenanceReport.maintCost
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Foto's:
-            {{
-              inspection.inspections[0].maintenanceReport.maintPhoto1
-            }}
-            {{
-              inspection.inspections[0].maintenanceReport.maintPhoto2
-            }}</ion-label
-          ></ion-item
+          ><ion-label>Foto 1: </ion-label
+          ><ion-label>
+            {{ inspection.inspections[0].maintenanceReport.maintPhoto1 }}
+          </ion-label></ion-item
+        >
+        <ion-item
+          ><ion-label>Foto 2: </ion-label
+          ><ion-label>{{
+            inspection.inspections[0].maintenanceReport.maintPhoto2
+          }}</ion-label></ion-item
         >
       </ion-list>
       <ion-list
@@ -139,24 +151,24 @@
           <ion-label>Technische installaties</ion-label>
         </ion-list-header>
         <ion-item
-          ><ion-label
-            >Locatie:
+          ><ion-label>Locatie: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].installationsReport.techLocation
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Soort installatie:
+          ><ion-label>Soort installatie: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].installationsReport.techType
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Gemelde storing:
+          ><ion-label>Gemelde storing: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].installationsReport.techMalfunction
             }}</ion-label
@@ -165,6 +177,7 @@
         <ion-item
           ><ion-label>Goedgekeurd: </ion-label>
           <ion-icon
+            class="inspectionIcons"
             :icon="
               inspection.inspections[0].installationsReport.techApproved
                 ? checkbox
@@ -173,19 +186,23 @@
           ></ion-icon
         ></ion-item>
         <ion-item
-          ><ion-label
-            >Opmerkingen:
+          ><ion-label>Opmerkingen: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].installationsReport.techComments
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Foto's:
+          ><ion-label>Foto1: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].installationsReport.techPhoto1
-            }}
+            }}</ion-label
+          ></ion-item
+        ><ion-item>
+          <ion-label>Foto 2: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].installationsReport.techPhoto2
             }}</ion-label
@@ -201,60 +218,64 @@
           <ion-label>Modificaties</ion-label>
         </ion-list-header>
         <ion-item
-          ><ion-label
-            >Bestaande situatie:
+          ><ion-label>Bestaande situatie: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].modificationsReport.modiSituation
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Locatie modificatie:
+          ><ion-label>Locatie modificatie: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].modificationsReport.modiLocation
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Uitgevoerd door:
+          ><ion-label>Uitgevoerd door: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].modificationsReport.modiPerformedBy
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Beschrijving modificatie:
+          ><ion-label>Beschrijving modificatie: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].modificationsReport.modiDescription
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Te ondernemen actie:
+          ><ion-label>Te ondernemen actie: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].modificationsReport.modiAction
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Opmerkingen:
+          ><ion-label>Opmerkingen: </ion-label
+          ><ion-label>
             {{
               inspection.inspections[0].modificationsReport.modComments
             }}</ion-label
           ></ion-item
         >
         <ion-item
-          ><ion-label
-            >Foto's:
+          ><ion-label>Foto 1: </ion-label>
+          <ion-label>
             {{
               inspection.inspections[0].modificationsReport.modPhoto1
-            }}
-             {{
+            }}</ion-label
+          ></ion-item
+        ><ion-item>
+          <ion-label>Foto 2: </ion-label>
+          <ion-label>
+            {{
               inspection.inspections[0].modificationsReport.modPhoto2
             }}</ion-label
           ></ion-item

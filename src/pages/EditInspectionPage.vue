@@ -17,6 +17,7 @@
           <form @submit.prevent="updateReports">
             <ion-label>Datum:</ion-label>
             <ion-input
+            class="custom ion-margin-start"
               type="date"
               v-model="loadedInspection.inspections[0].date"
               required
@@ -63,6 +64,8 @@ import {
   IonCardContent,
   IonLabel,
   IonInput,
+  IonList,
+  IonItem,
 } from "@ionic/vue";
 
 export default {
@@ -80,6 +83,8 @@ export default {
     IonCardContent,
     IonLabel,
     IonInput,
+    IonList,
+    IonItem,
   },
   data() {
     return { inspectionId: this.$route.params.id };
