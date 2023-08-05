@@ -62,7 +62,7 @@
               v-model="user.password"
             ></ion-input>
           </ion-item>
-          <ion-button expand="block" type="submit">Opslaan</ion-button>
+          <ion-button expand="block" type="submit" class="ion-margin-top">Opslaan</ion-button>
         </ion-list>
       </form>
     </ion-card-content>

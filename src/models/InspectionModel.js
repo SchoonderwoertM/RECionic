@@ -40,8 +40,9 @@ export class DamageReportModel {
     this.damType = damage.damType;
     this.damDate = damage.damDate;
     this.damAcuteAction = damage.damAcuteAction ? damage.damAcuteAction : false;
-    this.damDescription = damage.Description;
-    this.damPhotos = damage.Photos;
+    this.damDescription = damage.damDescription;
+    this.damPhoto1 = damage.damPhoto1;
+    this.damPhoto2 = damage.damPhoto2;
   }
 }
 
@@ -51,7 +52,8 @@ export class MaintenanceModel {
     this.maintType = maintenance.maintType;
     this.maintAcuteAction = maintenance.maintAcuteAction ? maintenance.maintAcuteAction : false;
     this.maintCost = maintenance.maintCost;
-    this.maintPhotos = maintenance.maintPhotos;
+    this.maintPhoto1 = maintenance.maintPhoto1;
+    this.maintPhoto2 = maintenance.maintPhoto2;
   }
 }
 
@@ -63,7 +65,8 @@ export class InstallationModel {
     this.techTestProcedure = installations.techTestProcedure;
     this.techApproved = installations.techApproved ? installations.techApproved : false;
     this.techComments = installations.techComments;
-    this.techPhotos = installations.techPhotos;
+    this.techPhoto1 = installations.techPhoto1;
+    this.techPhoto2 = installations.techPhoto2;
   }
 }
 
@@ -75,6 +78,7 @@ export class ModificationsModel {
     this.modiDescription = modifications.modiDescription;
     this.modiAction = modifications.modiAction;
     this.modComments = modifications.modComments;
-    this.modPhotos = modifications.modPhotos;
+    this.modPhoto1 = modifications.modPhoto1;
+    this.modPhoto2 = modifications.modPhoto2;
   }
 }

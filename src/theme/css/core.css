@@ -1,54 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
-body{
-  font-family: 'Roboto', sans-serif;
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens 
+@media screen and (min-widht: 1024px)*/
+
+/*General HTML elements*/
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-h1,h2,h3{
-  font-family: 'Archivo Black', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Archivo Black", sans-serif;
   color: var(--ion-color-primary);
+}
+
+h1{
+  font-size: 1.7rem;
+  margin-block-end: 1.5rem;
+}
+
+h2{
+  font-size: 1.5rem;
+}
+
+h3{
+  font-size: 1.2rem;
+}
+
+p{
+  font-size: 1rem;
 }
 
 a {
   text-decoration: none;
 }
+/*End General HTML elements*/
 
+.textColorPrimaryContrast{
+  color: var(--ion-color-primary-contrast);
+}
+
+/*General ionic elements*/
 ion-spinner {
   width: 100px;
   height: 100px;
 }
 
-ion-icon{
+ion-icon {
   font-size: 1.5rem;
   color: var(--ion-color-secondary);
 }
 
-ion-content{
+ion-content {
   --background: var(--ion-color-secondary);
 }
 
+ion-thumbnail{
+  --border-radius:5px;
+  --size:8rem;
+}
+/*End General ionic elements*/
+
 /*Ion Card*/
 ion-card {
-  background-color: var(--ion-color-secondary-tint);
+  --background: var(--ion-color-secondary-tint);
   border: 1px solid var(--ion-color-primary);
+  margin-inline-start: 0;
+  margin-block-end: 1.2rem;
 }
 
 ion-card-title {
-  font-family: 'Archivo Black', sans-serif;
-  --color: var(--ion-color-secondary-contrast);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.7rem;
+  --color: var(--ion-color-primary);
 }
 
 ion-card-subtitle {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.5rem;
   --color: var(--ion-color-secondary-contrast);
 }
 
 ion-card-content {
   color: var(--ion-color-primary-contrast);
+  font-size: 1rem;
 }
 /*End Ion Card*/
 
 /*Page Content*/
-.pageContent{
+.pageContent {
   max-width: 500px;
   margin: 5rem auto;
 }
@@ -56,14 +100,19 @@ ion-card-content {
 /*List*/
 .ion-list {
   background-color: var(--ion-color-secondary-tint);
+  padding-block-end: 1.5rem;
 }
 
 ion-list-header {
-  font-size: larger;
+  font-size: x-large;
+  padding-inline-start: 0;
+  text-align: center;
+  border-bottom: 2px solid var(--ion-color-primary);
 }
 
 ion-item {
   --background: var(--ion-color-secondary-tint);
+  --padding-start: 0;
 }
 /*End list*/
 
@@ -82,7 +131,7 @@ ion-back-button {
   color: var(--ion-color-secondary);
 }
 
-.logoutButton{
+.logoutButton {
   --background: var(--ion-color-primary);
 }
 
@@ -115,10 +164,23 @@ ion-back-button {
 /*End Home*/
 
 /*Documents*/
-#documentCardHeader{
+#documentCardHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+#documentCardHeader, #documentCardContent{
+  background: var(--ion-color-secondary-tint);
+}
+
+#documentTitle{
+  font-size: 1.3rem;
 }
 /*End Documents*/
+
+
+
+
 

@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
-    <ion-list-header color="primary">
-      <ion-label><h2>Technische installaties</h2></ion-label>
+    <ion-list-header>
+      <ion-label>Technische installaties</ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -55,10 +55,22 @@
       ></ion-input
     ></ion-item>
     <ion-item>
-      <ion-label
-        >Foto's: {{ installationsReport.techPhotos }}</ion-label
-      ></ion-item
-    >
+      <ion-label>Foto's:</ion-label>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="installationsReport.techPhoto1"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="installationsReport.techPhoto2"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div>
+    </ion-item>
   </ion-list>
 </template>
 
@@ -89,6 +101,21 @@ export default {
     IonSelect,
     IonSelectOption,
     IonButton,
+  },
+  methods: {
+    async getPicture() {
+      try {
+        const image = await Camera.getPhoto({
+          quality: 90,
+          allowEditing: false,
+          resultType: CameraResultType.Uri,
+        });
+        const imageUrl = image.webPath;
+        this.damageReport.damPhotos = imageUrl;
+      } catch (error) {
+        console.error("Camera error:", error);
+      }
+    },
   },
 };
 </script>

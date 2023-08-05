@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
-    <ion-list-header color="primary">
-      <ion-label><h2>Modificaties</h2></ion-label>
+    <ion-list-header>
+      <ion-label>Modificaties</ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Bestaande situatie: </ion-label>
@@ -60,11 +60,23 @@
         v-model="modificationsReport.modComments"
       ></ion-input
     ></ion-item>
-    <ion-item
-      ><ion-label
-        >Foto's: {{ modificationsReport.modPhotos }}</ion-label
-      ></ion-item
-    >
+    <ion-item>
+      <ion-label>Foto's:</ion-label>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="modificationsReport.modPhoto1"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="modificationsReport.modPhoto2"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div>
+    </ion-item>
   </ion-list>
 </template>
 
@@ -93,6 +105,21 @@ export default {
     IonButton,
     IonSelect,
     IonSelectOption,
+  },
+  methods: {
+    async getPicture() {
+      try {
+        const image = await Camera.getPhoto({
+          quality: 90,
+          allowEditing: false,
+          resultType: CameraResultType.Uri,
+        });
+        const imageUrl = image.webPath;
+        this.damageReport.damPhotos = imageUrl;
+      } catch (error) {
+        console.error("Camera error:", error);
+      }
+    },
   },
 };
 </script>

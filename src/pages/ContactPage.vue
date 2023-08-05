@@ -1,14 +1,16 @@
 <template>
   <base-layout>
-    <ion-card class="pageContent">
+    <ion-card class="pageContent centerContent">
       <ion-card-header>
         <ion-card-title>Contact</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <h2>Real Estate Care</h2>
-        <p>Postbus 444</p>
-        <p>2300 AK Leiden</p>
-        <p>071 751 00 52</p>
+        <ion-list lines="none" class="ion-list" id="contactList">
+          <ion-item class="contactItem">Real Estate Care</ion-item>
+          <ion-item>Postbus 444 </ion-item>
+          <ion-item>2300 AK Leiden </ion-item><ion-item>071 751 00 52 </ion-item
+          ><ion-item>info@realestatecare.com </ion-item>
+        </ion-list>
       </ion-card-content>
     </ion-card>
   </base-layout>
@@ -21,6 +23,8 @@ import {
   IonCardContent,
   IonCardHeader,
   IonCardTitle,
+  IonList,
+  IonItem,
 } from "@ionic/vue";
 
 export default {
@@ -31,6 +35,8 @@ export default {
     IonCardContent,
     IonCardHeader,
     IonCardTitle,
+    IonList,
+    IonItem,
   },
 };
 </script>

@@ -7,7 +7,7 @@
           ><ion-card-title>Inspectie aanpassen</ion-card-title></ion-card-header
         >
         <ion-card-subtitle>
-          <h2>
+          <h2 class="ion-padding-start textColorPrimaryContrast">
             {{ loadedInspection.address.street }}
             {{ loadedInspection.address.housenumber }},
             {{ loadedInspection.address.residence }}
@@ -96,7 +96,7 @@ export default {
     updateReports() {
       this.$store.dispatch("updateReports", false);
       //go back to the overview of the inspections. This can be the overview of the completed or the assigned inspections.
-      this.$router.go(-2);
+      this.$router.go(-1);
     },
   },
 };

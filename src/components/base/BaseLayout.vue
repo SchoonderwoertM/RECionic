@@ -33,17 +33,17 @@
     <ion-footer>
       <ion-toolbar>
         <ion-buttons id="footerButtons">
-          <router-link to="/home">
-            <ion-button>
-              <ion-icon :icon="homeOutline" slot="icon-only"></ion-icon>
-            </ion-button>
-          </router-link>
           <router-link to="/notifications">
             <ion-button>
               <ion-icon
                 :icon="notificationsOutline"
                 slot="icon-only"
               ></ion-icon>
+            </ion-button>
+          </router-link>
+          <router-link to="/home">
+            <ion-button>
+              <ion-icon :icon="homeOutline" slot="icon-only"></ion-icon>
             </ion-button>
           </router-link>
           <router-link to="/contact">

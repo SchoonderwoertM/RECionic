@@ -2,7 +2,7 @@
   <base-layout page-default-back-link="/home">
     <div class="pageContent">
       <ion-label>
-        <h1>Documents</h1>
+        <h1>Documenten</h1>
       </ion-label>
       <documents-list
         :documents="documents"

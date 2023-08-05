@@ -1,7 +1,7 @@
 <template>
   <ion-card color="secondary">
     <ion-card-header id="documentCardHeader">
-      <ion-card-title>{{ document.title }}</ion-card-title>
+      <ion-card-title id="documentTitle">{{ document.title }}</ion-card-title>
       <ion-button @click="document.showContent = !document.showContent">
         <ion-icon
           :icon="document.showContent ? chevronUpOutline : chevronDownOutline"
@@ -9,7 +9,7 @@
         ></ion-icon>
       </ion-button>
     </ion-card-header>
-    <ion-card-content v-show="document.showContent">
+    <ion-card-content v-show="document.showContent" id="documentCardContent">
       {{ document.content }}
     </ion-card-content>
   </ion-card>

@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="none" class="ion-list">
-    <ion-list-header color="primary">
-      <ion-label><h2>Achterstallig onderhoud</h2></ion-label>
+    <ion-list-header>
+      <ion-label>Achterstallig onderhoud</ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -44,10 +44,22 @@
         <ion-select-option value="1500+">1500+</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item
-      ><ion-label
-        >Foto's: {{ maintenanceReport.maintPhotos }}</ion-label
-      ></ion-item
+    <ion-item>
+      <ion-label>Foto's:</ion-label>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="maintenanceReport.maintPhoto1"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div>
+      <div>
+        <ion-input aria-label="Foto's"
+          type="url"
+          v-model="maintenanceReport.maintPhoto2"
+        ></ion-input>
+        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      </div></ion-item
     >
   </ion-list>
 </template>
@@ -62,6 +74,7 @@ import {
   IonCheckbox,
   IonSelect,
   IonSelectOption,
+  IonButton
 } from "@ionic/vue";
 
 export default {
@@ -77,6 +90,22 @@ export default {
     IonCheckbox,
     IonSelect,
     IonSelectOption,
+    IonButton
+  },
+  methods: {
+    async getPicture() {
+      try {
+        const image = await Camera.getPhoto({
+          quality: 90,
+          allowEditing: false,
+          resultType: CameraResultType.Uri,
+        });
+        const imageUrl = image.webPath;
+        this.damageReport.damPhotos = imageUrl;
+      } catch (error) {
+        console.error("Camera error:", error);
+      }
+    },
   },
 };
 </script>

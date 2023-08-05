@@ -5,13 +5,13 @@
     >
     <ion-card-subtitle
       ><p>{{ inspection.inspections.date }}</p>
-      <h2>
+      <h2 class="ion-padding-start textColorPrimaryContrast">
         {{ inspection.address.street }} {{ inspection.address.housenumber }},
         {{ inspection.address.residence }}
       </h2></ion-card-subtitle
     >
     <ion-card-content>
-      <ion-button :router-link="`/inspection/edit/${inspection.id}`"
+      <ion-button class="ion-margin-bottom" expand="block" :router-link="`/inspection/edit/${inspection.id}`"
         >Aanpassen</ion-button
       >
       <ion-list
@@ -19,7 +19,7 @@
         lines="none"
         class="ion-list"
       >
-        <ion-list-header color="primary">
+        <ion-list-header>
           <ion-label>Schade</ion-label>
         </ion-list-header>
         <ion-item>
@@ -71,7 +71,8 @@
         <ion-item>
           <ion-label
             >Foto's:
-            {{ inspection.inspections[0].damageReport.damPhotos }}</ion-label
+            {{ inspection.inspections[0].damageReport.damPhoto1 }}
+            {{ inspection.inspections[0].damageReport.damPhoto2 }}</ion-label
           >
         </ion-item>
       </ion-list>
@@ -80,7 +81,7 @@
         lines="none"
         class="ion-list"
       >
-        <ion-list-header color="primary">
+        <ion-list-header>
           <ion-label>Achterstallig onderhoud</ion-label>
         </ion-list-header>
         <ion-item
@@ -121,7 +122,10 @@
           ><ion-label
             >Foto's:
             {{
-              inspection.inspections[0].maintenanceReport.maintPhotos
+              inspection.inspections[0].maintenanceReport.maintPhoto1
+            }}
+            {{
+              inspection.inspections[0].maintenanceReport.maintPhoto2
             }}</ion-label
           ></ion-item
         >
@@ -131,7 +135,7 @@
         lines="none"
         class="ion-list"
       >
-        <ion-list-header color="primary">
+        <ion-list-header>
           <ion-label>Technische installaties</ion-label>
         </ion-list-header>
         <ion-item
@@ -180,7 +184,10 @@
           ><ion-label
             >Foto's:
             {{
-              inspection.inspections[0].installationsReport.techPhotos
+              inspection.inspections[0].installationsReport.techPhoto1
+            }}
+            {{
+              inspection.inspections[0].installationsReport.techPhoto2
             }}</ion-label
           ></ion-item
         >
@@ -190,7 +197,7 @@
         lines="none"
         class="ion-list"
       >
-        <ion-list-header color="primary">
+        <ion-list-header>
           <ion-label>Modificaties</ion-label>
         </ion-list-header>
         <ion-item
@@ -245,7 +252,10 @@
           ><ion-label
             >Foto's:
             {{
-              inspection.inspections[0].modificationsReport.modPhotos
+              inspection.inspections[0].modificationsReport.modPhoto1
+            }}
+             {{
+              inspection.inspections[0].modificationsReport.modPhoto2
             }}</ion-label
           ></ion-item
         >
