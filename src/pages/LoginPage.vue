@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-card class="pageContent">
+    <ion-card class="pageContent extraMarginTop">
       <ion-card-header color="primary"
         ><div>
           <ion-img

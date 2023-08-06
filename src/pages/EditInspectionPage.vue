@@ -17,7 +17,7 @@
           <form @submit.prevent="updateReports">
             <ion-label>Datum:</ion-label>
             <ion-input
-            class="custom ion-margin-start"
+              class="custom ion-margin-start"
               type="date"
               v-model="loadedInspection.inspections[0].date"
               required
@@ -40,7 +40,15 @@
                 loadedInspection.inspections[0].modificationsReport
               "
             />
-            <ion-button type="submit" expand="block">Opslaan</ion-button>
+            <ion-label position="fixed">Afronden:</ion-label>
+            <ion-checkbox
+              aria-label="Afronden"
+              v-model="loadedInspection.inspections[0].completed"
+            ></ion-checkbox>
+            <ion-button class="ion-margin-bottom" type="submit" expand="block"
+              >Opslaan</ion-button
+            >
+            <ion-button @click="cancel" expand="block">Annuleren</ion-button>
           </form>
         </ion-card-content>
       </ion-card>
@@ -66,6 +74,7 @@ import {
   IonInput,
   IonList,
   IonItem,
+  IonCheckbox,
 } from "@ionic/vue";
 
 export default {
@@ -85,6 +94,7 @@ export default {
     IonInput,
     IonList,
     IonItem,
+    IonCheckbox,
   },
   data() {
     return { inspectionId: this.$route.params.id };
@@ -99,8 +109,10 @@ export default {
   },
   methods: {
     updateReports() {
-      this.$store.dispatch("updateReports", false);
-      //go back to the overview of the inspections. This can be the overview of the completed or the assigned inspections.
+      this.$store.dispatch("updateReports");
+      this.$router.go(-1);
+    },
+    cancel() {
       this.$router.go(-1);
     },
   },

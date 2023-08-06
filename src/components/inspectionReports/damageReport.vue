@@ -48,7 +48,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Acute actie vereist:</ion-label>
-      <ion-checkbox
+      <ion-checkbox 
         aria-label="Acute actie vereist"
         v-model="damageReport.damAcuteAction"
       ></ion-checkbox>
@@ -67,7 +67,7 @@
       <ion-input position="fixed"
       class="custom ion-margin-end"
         aria-label="Foto 1"
-        type="url"
+        type="text"
         v-model="damageReport.damPhoto1"
       ></ion-input>
       <ion-button @click="getPicture">Foto toevoegen</ion-button>
@@ -76,7 +76,7 @@
       <ion-input
       class="custom ion-margin-end"
         aria-label="Foto 2"
-        type="url"
+        type="text"
         v-model="damageReport.damPhoto2"
       ></ion-input>
       <ion-button @click="getPicture">Foto toevoegen</ion-button>

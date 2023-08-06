@@ -31,10 +31,10 @@
             {{ inspection.inspections[0].damageReport.damLocation }}</ion-label
           >
         </ion-item>
-        <ion-item>
-          <ion-label>Nieuwe schade:</ion-label>
+        <ion-item class="labelIconCombi">
+          <ion-label class="labelIconCombiItem">Nieuwe schade:</ion-label>
           <ion-icon
-            class="inspectionIcons"
+            class="inspectionIcons labelIconCombiItem"
             :icon="
               inspection.inspections[0].damageReport.damNew
                 ? checkbox
@@ -54,10 +54,10 @@
             inspection.inspections[0].damageReport.damDate
           }}</ion-label>
         </ion-item>
-        <ion-item>
-          <ion-label>Acute actie vereist: </ion-label>
+        <ion-item class="labelIconCombi">
+          <ion-label class="labelIconCombiItem">Acute actie vereist: </ion-label>
           <ion-icon
-            class="inspectionIcons"
+            class="inspectionIcons labelIconCombiItem"
             :icon="
               inspection.inspections[0].damageReport.damAcuteAction
                 ? checkbox
@@ -110,10 +110,10 @@
             }}</ion-label
           ></ion-item
         >
-        <ion-item
-          ><ion-label>Acute actie vereist: </ion-label>
+        <ion-item class="labelIconCombi"
+          ><ion-label class="labelIconCombiItem">Acute actie vereist: </ion-label>
           <ion-icon
-            class="inspectionIcons"
+            class="inspectionIcons labelIconCombiItem"
             :icon="
               inspection.inspections[0].maintenanceReport.maintAcuteAction
                 ? checkbox
@@ -174,10 +174,10 @@
             }}</ion-label
           ></ion-item
         >
-        <ion-item
-          ><ion-label>Goedgekeurd: </ion-label>
+        <ion-item class="labelIconCombi"
+          ><ion-label class="labelIconCombiItem">Goedgekeurd: </ion-label>
           <ion-icon
-            class="inspectionIcons"
+            class="inspectionIcons labelIconCombiItem"
             :icon="
               inspection.inspections[0].installationsReport.techApproved
                 ? checkbox

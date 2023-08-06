@@ -67,7 +67,7 @@
       <ion-input
         class="custom ion-margin-end"
         aria-label="Foto's"
-        type="url"
+        type="text"
         v-model="modificationsReport.modPhoto1"
       ></ion-input>
       <ion-button @click="getPicture">Foto toevoegen</ion-button>
@@ -76,7 +76,7 @@
       <ion-input
         class="custom ion-margin-end"
         aria-label="Foto's"
-        type="url"
+        type="text"
         v-model="modificationsReport.modPhoto2"
       ></ion-input>
       <ion-button @click="getPicture">Foto toevoegen</ion-button>

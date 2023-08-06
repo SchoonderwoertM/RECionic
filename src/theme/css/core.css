@@ -93,11 +93,6 @@ ion-input.custom {
   color: var(--ion-color-primary);
 }
 
-.footerIcons:hover {
-  border-radius: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .textColorPrimaryContrast {
   color: var(--ion-color-primary-contrast);
 }
@@ -131,7 +126,7 @@ ion-card-content {
 
 /*Page Content*/
 .pageContent {
-  max-width: 700px;
+  max-width: 600px;
   margin: 1rem auto;
 }
 
@@ -161,7 +156,6 @@ ion-footer {
 }
 
 .logo {
-  display: inline-block;
   height: 95px;
 }
 
@@ -173,6 +167,11 @@ ion-back-button {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.footerIcons:hover {
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*End Base Layout*/
 
@@ -225,3 +224,16 @@ ion-back-button {
   font-size: 1.3rem;
 }
 /*End Documents*/
+
+.extraMarginTop{
+  margin-block-start: 20vh;
+  }
+
+  .labelIconCombi{
+    display: flex;
+    flex: 1 1 0;
+  }
+
+  .labelIconCombiItem{
+    flex: 1;
+  }

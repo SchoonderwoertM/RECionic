@@ -6,13 +6,11 @@
           slot="start"
           :default-href="pageDefaultBackLink"
         ></ion-back-button>
-        <router-link to="/Home">
-          <ion-img
-            src="./src/theme/images/logo.png"
-            alt="logo"
-            class="logo ion-padding"
-          />
-        </router-link>
+        <ion-img
+          src="./src/theme/images/logo.png"
+          alt="logo"
+          class="logo ion-padding"
+        />
         <ion-button
           color="primary"
           slot="end"
