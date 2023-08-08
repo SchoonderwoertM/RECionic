@@ -4,7 +4,7 @@
       <ion-spinner v-if="loading" name="bubbles"></ion-spinner>
       <ion-card>
         <ion-card-header
-          ><ion-card-title>Inspectie aanpassen</ion-card-title></ion-card-header
+          ><ion-card-title>Rapportage aanpassen</ion-card-title></ion-card-header
         >
         <ion-card-subtitle>
           <h2 class="ion-padding-start primaryContrast">

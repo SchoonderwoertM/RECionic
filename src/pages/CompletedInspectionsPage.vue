@@ -2,7 +2,7 @@
   <base-layout page-default-back-link="/home">
     <div class="pageContent">
       <ion-label>
-        <h1>Uitgevoerde inspecties</h1>
+        <h1>Uitgevoerde rapportages</h1>
       </ion-label>
       <inspections-list :inspections="completedInspections"></inspections-list>
     </div>
