@@ -2,13 +2,12 @@
   <ion-page>
     <ion-card class="pageContent extraMarginTop">
       <ion-card-header color="primary"
-        ><div>
+        >
           <ion-img
             class="logo"
             src="src\theme\images\logo.png"
             alt="Real estate care logo"
           />
-        </div>
       </ion-card-header>
       <ion-card-content class="ion-margin-vertical">
         <form @submit.prevent="login">

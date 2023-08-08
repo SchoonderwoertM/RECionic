@@ -12,10 +12,10 @@
           class="logo ion-padding"
         />
         <ion-button
+          id="logoutButton"
           color="primary"
           slot="end"
           aria-label="uitloggen"
-          class="ion-margin-end"
           @click="logout()"
         >
           <ion-icon

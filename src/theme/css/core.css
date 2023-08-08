@@ -161,17 +161,17 @@ ion-footer {
 
 ion-back-button {
   color: var(--ion-color-secondary);
+  --border-radius: 10%;
+}
+
+#logoutButton{
+  --box-shadow: none;
 }
 
 #footerButtons {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.footerIcons:hover {
-  border-radius: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*End Base Layout*/
 
