@@ -5,7 +5,7 @@
         >
           <ion-img
             class="logo"
-            src="src\theme\images\logo.png"
+            src="/logo.png"
             alt="Real estate care logo"
           />
       </ion-card-header>

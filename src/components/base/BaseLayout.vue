@@ -7,7 +7,7 @@
           :default-href="pageDefaultBackLink"
         ></ion-back-button>
         <ion-img
-          src="./src/theme/images/logo.png"
+          src="/logo.png"
           alt="logo"
           class="logo ion-padding"
           @click="goHome"

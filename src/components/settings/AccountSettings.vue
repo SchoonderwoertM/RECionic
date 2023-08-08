@@ -10,7 +10,7 @@
             <ion-thumbnail>
               <ion-img
                 alt="Profiel foto"
-                src="src\theme\images\blankProfilePicture.png"
+                src="/blankProfilePicture.png"
               />
             </ion-thumbnail>
           </ion-item>
