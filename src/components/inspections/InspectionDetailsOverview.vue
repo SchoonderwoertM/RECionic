@@ -1,24 +1,67 @@
 <template>
   <ion-card>
     <ion-card-header
-      ><ion-card-title>Details inspectie</ion-card-title></ion-card-header
-    >
-    <ion-card-subtitle
-      ><p>{{ inspection.inspections.date }}</p>
-      <h2 class="ion-padding-start textColorPrimaryContrast">
-        {{ inspection.address.street }} {{ inspection.address.housenumber }},
-        {{ inspection.address.residence }}
-      </h2></ion-card-subtitle
-    >
-    <ion-card-content>
-      <ion-button
-        class="ion-margin-bottom"
-        expand="block"
-        :router-link="`/inspection/edit/${inspection.id}`"
-        >Aanpassen</ion-button
+      ><ion-card-title>{{
+        inspection.completed ? "Details inspecties" : "Uit te voeren inspecties"
+      }}</ion-card-title>
+      <ion-card-subtitle
+        ><p>{{ inspection.inspections.date }}</p>
+        <h2 class="primaryContrast">
+          {{ inspection.address.street }} {{ inspection.address.housenumber
+          }}<br />{{ inspection.address.zipcode }}
+          {{ inspection.address.residence }}
+        </h2></ion-card-subtitle
       >
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="ion-list" lines="none">
+        <ion-item>
+          <ion-icon
+            class="inspectionIcons ion-margin-end"
+            :icon="
+              inspection.inspections[0].damageReport.damPerform
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
+          <ion-label>Schade opnemen</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon
+            class="inspectionIcons ion-margin-end"
+            :icon="
+              inspection.inspections[0].maintenanceReport.maintPerform
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
+          <ion-label>Achterstallig onderhoud opnemen</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon
+            class="inspectionIcons ion-margin-end"
+            :icon="
+              inspection.inspections[0].installationsReport.techPerform
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
+          <ion-label>Technische installaties inspecteren</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon
+            class="inspectionIcons ion-margin-end"
+            :icon="
+              inspection.inspections[0].modificationsReport.modPerform
+                ? checkbox
+                : squareOutline
+            "
+          ></ion-icon>
+          <ion-label>Modificaties inventariseren</ion-label>
+        </ion-item>
+      </ion-list>
       <ion-list
-        v-if="inspection.inspections[0].damageReport"
+        v-if="inspection.inspections[0].damageReport.damPerform"
         lines="none"
         class="ion-list"
       >
@@ -55,7 +98,9 @@
           }}</ion-label>
         </ion-item>
         <ion-item class="labelIconCombi">
-          <ion-label class="labelIconCombiItem">Acute actie vereist: </ion-label>
+          <ion-label class="labelIconCombiItem"
+            >Acute actie vereist:
+          </ion-label>
           <ion-icon
             class="inspectionIcons labelIconCombiItem"
             :icon="
@@ -87,7 +132,7 @@
         </ion-item>
       </ion-list>
       <ion-list
-        v-if="inspection.inspections[0].maintenanceReport"
+        v-if="inspection.inspections[0].maintenanceReport.maintPerform"
         lines="none"
         class="ion-list"
       >
@@ -111,7 +156,9 @@
           ></ion-item
         >
         <ion-item class="labelIconCombi"
-          ><ion-label class="labelIconCombiItem">Acute actie vereist: </ion-label>
+          ><ion-label class="labelIconCombiItem"
+            >Acute actie vereist:
+          </ion-label>
           <ion-icon
             class="inspectionIcons labelIconCombiItem"
             :icon="
@@ -143,7 +190,7 @@
         >
       </ion-list>
       <ion-list
-        v-if="inspection.inspections[0].installationsReport"
+        v-if="inspection.inspections[0].installationsReport.techPerform"
         lines="none"
         class="ion-list"
       >
@@ -210,7 +257,7 @@
         >
       </ion-list>
       <ion-list
-        v-if="inspection.inspections[0].modificationsReport"
+        v-if="inspection.inspections[0].modificationsReport.modiPerform"
         lines="none"
         class="ion-list"
       >
@@ -280,7 +327,13 @@
             }}</ion-label
           ></ion-item
         >
-      </ion-list></ion-card-content
+      </ion-list>
+      <ion-button
+        class="ion-margin-bottom"
+        expand="block"
+        :router-link="`/inspection/edit/${inspection.id}`"
+        >{{ inspection.completed ? "Aanpassen" : "Uitvoeren" }}</ion-button
+      ></ion-card-content
     >
   </ion-card>
 </template>
@@ -298,6 +351,7 @@ import {
   IonCardContent,
   IonButton,
   IonIcon,
+  IonCheckbox,
 } from "@ionic/vue";
 import { checkbox, squareOutline } from "ionicons/icons";
 
@@ -320,6 +374,7 @@ export default {
     IonCardContent,
     IonButton,
     IonIcon,
+    IonCheckbox,
   },
 };
 </script>

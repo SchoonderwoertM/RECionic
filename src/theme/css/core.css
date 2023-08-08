@@ -93,7 +93,7 @@ ion-input.custom {
   color: var(--ion-color-primary);
 }
 
-.textColorPrimaryContrast {
+.primaryContrast {
   color: var(--ion-color-primary-contrast);
 }
 /*End General Custom classes*/

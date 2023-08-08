@@ -2,7 +2,7 @@
   <ion-card :router-link="`/inspection/${inspection.id}`">
     <ion-card-content>
       <p>{{ inspection.inspections[0].date }}</p>
-      <h2 class="textColorPrimaryContrast">
+      <h2 class="primaryContrast">
         {{ inspection.address.street }} {{ inspection.address.housenumber }},
         {{ inspection.address.residence }}
       </h2>

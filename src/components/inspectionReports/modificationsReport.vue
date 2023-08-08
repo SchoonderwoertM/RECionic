@@ -1,7 +1,16 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header>
-      <ion-label>Modificaties</ion-label>
+      <ion-label
+        ><ion-icon
+          v-if="modificationsReport.modiLocation"
+          :icon="bookmark"
+          slot="icon-only"
+          aria-hidden="true"
+          color="primary"
+        ></ion-icon
+        >Modificaties</ion-label
+      >
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Bestaande situatie: </ion-label>
@@ -85,6 +94,8 @@
 </template>
 
 <script>
+import { bookmark } from "ionicons/icons";
+
 import {
   IonList,
   IonItem,
@@ -94,6 +105,7 @@ import {
   IonButton,
   IonSelect,
   IonSelectOption,
+  IonIcon
 } from "@ionic/vue";
 
 export default {
@@ -109,6 +121,12 @@ export default {
     IonButton,
     IonSelect,
     IonSelectOption,
+    IonIcon
+  },
+  setup() {
+    return {
+      bookmark,
+    };
   },
   methods: {
     async getPicture() {

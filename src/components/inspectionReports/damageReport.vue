@@ -1,12 +1,21 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header>
-      <ion-label>Schade</ion-label>
+      <ion-label
+        ><ion-icon
+          v-if="damageReport.damLocation"
+          :icon="bookmark"
+          slot="icon-only"
+          aria-hidden="true"
+          color="primary"
+        ></ion-icon
+        >Schade</ion-label
+      >
     </ion-list-header>
     <ion-item>
       <ion-label position="fixed">Locatie:</ion-label>
       <ion-input
-      class="custom ion-margin-top"
+        class="custom ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="damageReport.damLocation"
@@ -40,7 +49,7 @@
     <ion-item>
       <ion-label position="fixed">Datum:</ion-label>
       <ion-input
-      class="custom"
+        class="custom"
         aria-label="Datum"
         type="date"
         v-model="damageReport.damDate"
@@ -48,7 +57,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Acute actie vereist:</ion-label>
-      <ion-checkbox 
+      <ion-checkbox
         aria-label="Acute actie vereist"
         v-model="damageReport.damAcuteAction"
       ></ion-checkbox>
@@ -56,7 +65,7 @@
     <ion-item>
       <ion-label position="fixed">Omschrijving:</ion-label>
       <ion-input
-      class="custom"
+        class="custom"
         aria-label="Omschrijving"
         type="text"
         v-model="damageReport.damDescription"
@@ -64,8 +73,9 @@
       ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input position="fixed"
-      class="custom ion-margin-end"
+      <ion-input
+        position="fixed"
+        class="custom ion-margin-end"
         aria-label="Foto 1"
         type="text"
         v-model="damageReport.damPhoto1"
@@ -74,7 +84,7 @@
     </ion-item>
     <ion-item>
       <ion-input
-      class="custom ion-margin-end"
+        class="custom ion-margin-end"
         aria-label="Foto 2"
         type="text"
         v-model="damageReport.damPhoto2"
@@ -86,6 +96,7 @@
 
 <script>
 import { Camera, CameraResultType } from "@capacitor/camera";
+import { bookmark } from "ionicons/icons";
 
 import {
   IonList,
@@ -97,6 +108,7 @@ import {
   IonSelect,
   IonSelectOption,
   IonButton,
+  IonIcon
 } from "@ionic/vue";
 
 export default {
@@ -113,6 +125,12 @@ export default {
     IonSelect,
     IonSelectOption,
     IonButton,
+    IonIcon
+  },
+  setup() {
+    return {
+      bookmark,
+    };
   },
   methods: {
     async getPicture() {

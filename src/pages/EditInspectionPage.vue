@@ -7,7 +7,7 @@
           ><ion-card-title>Inspectie aanpassen</ion-card-title></ion-card-header
         >
         <ion-card-subtitle>
-          <h2 class="ion-padding-start textColorPrimaryContrast">
+          <h2 class="ion-padding-start primaryContrast">
             {{ loadedInspection.address.street }}
             {{ loadedInspection.address.housenumber }},
             {{ loadedInspection.address.residence }}
@@ -110,10 +110,10 @@ export default {
   methods: {
     updateReports() {
       this.$store.dispatch("updateReports");
-      this.$router.go(-1);
+      this.$router.go(-2);
     },
     cancel() {
-      this.$router.go(-1);
+      this.$router.go(-2);
     },
   },
 };

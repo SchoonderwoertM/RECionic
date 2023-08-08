@@ -5,6 +5,7 @@
         <ion-card-title>Contact</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <p>Voor vragen kunt u ons bereiken via onderstaande contactgegevens.</p><br>
         <p>Real Estate Care</p>
         <p>Postbus 444</p>
         <p>2300 AK Leiden</p>

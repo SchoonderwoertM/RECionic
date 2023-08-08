@@ -35,6 +35,7 @@ export class ReportsModel{
 
 export class DamageReportModel {
   constructor(damage) {
+    this.damPerform = damage.damPerform;
     this.damLocation = damage.damLocation;
     this.damNew = damage.damNew ? damage.damNew : false;
     this.damType = damage.damType;
@@ -48,6 +49,7 @@ export class DamageReportModel {
 
 export class MaintenanceModel {
   constructor(maintenance) {
+    this.maintPerform = maintenance.maintPerform;
     this.maintLocation = maintenance.maintLocation;
     this.maintType = maintenance.maintType;
     this.maintAcuteAction = maintenance.maintAcuteAction ? maintenance.maintAcuteAction : false;
@@ -59,6 +61,7 @@ export class MaintenanceModel {
 
 export class InstallationModel {
   constructor(installations) {
+    this.techPerform = installations.techPerform;
     this.techLocation = installations.techLocation;
     this.techType = installations.techType;
     this.techMalfunction = installations.techMalfunction;
@@ -72,6 +75,7 @@ export class InstallationModel {
 
 export class ModificationsModel {
   constructor(modifications) {
+    this.modiPerform = modifications.modiPerform;
     this.modiSituation = modifications.modiSituation;
     this.modiLocation = modifications.modiLocation;
     this.modiPerformedBy = modifications.modiPerformedBy;

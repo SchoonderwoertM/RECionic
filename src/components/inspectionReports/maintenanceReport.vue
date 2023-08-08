@@ -1,7 +1,16 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header>
-      <ion-label>Achterstallig onderhoud</ion-label>
+      <ion-label
+        ><ion-icon
+          v-if="maintenanceReport.maintLocation"
+          :icon="bookmark"
+          slot="icon-only"
+          aria-hidden="true"
+          color="primary"
+        ></ion-icon
+        >Achterstallig onderhoud</ion-label
+      >
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -67,6 +76,8 @@
 </template>
 
 <script>
+import { bookmark } from "ionicons/icons";
+
 import {
   IonList,
   IonItem,
@@ -77,6 +88,7 @@ import {
   IonSelect,
   IonSelectOption,
   IonButton,
+  IonIcon
 } from "@ionic/vue";
 
 export default {
@@ -93,6 +105,12 @@ export default {
     IonSelect,
     IonSelectOption,
     IonButton,
+    IonIcon
+  },
+  setup() {
+    return {
+      bookmark,
+    };
   },
   methods: {
     async getPicture() {

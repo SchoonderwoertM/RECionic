@@ -1,7 +1,16 @@
 <template>
   <ion-list lines="none" class="ion-list">
     <ion-list-header>
-      <ion-label>Technische installaties</ion-label>
+      <ion-label>
+        <ion-icon
+          v-if="installationsReport.techLocation"
+          :icon="bookmark"
+          slot="icon-only"
+          aria-hidden="true"
+          color="primary"
+        ></ion-icon>
+        Technische installaties
+      </ion-label>
     </ion-list-header>
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
@@ -65,7 +74,7 @@
         v-model="installationsReport.techPhoto1"
       >
       </ion-input>
-        <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture">Foto toevoegen</ion-button>
     </ion-item>
     <ion-item>
       <ion-input
@@ -80,6 +89,8 @@
 </template>
 
 <script>
+import { bookmark } from "ionicons/icons";
+
 import {
   IonList,
   IonItem,
@@ -90,6 +101,7 @@ import {
   IonSelect,
   IonSelectOption,
   IonButton,
+  IonIcon,
 } from "@ionic/vue";
 
 export default {
@@ -106,6 +118,12 @@ export default {
     IonSelect,
     IonSelectOption,
     IonButton,
+    IonIcon,
+  },
+  setup() {
+    return {
+      bookmark,
+    };
   },
   methods: {
     async getPicture() {
