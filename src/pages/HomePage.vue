@@ -67,7 +67,7 @@ export default {
     IonRow,
     IonIcon,
   },
-  setup() {
+  data() {
     return {
       checkmarkOutline,
       checkboxOutline,
