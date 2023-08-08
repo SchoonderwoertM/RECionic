@@ -10,6 +10,7 @@
           src="./src/theme/images/logo.png"
           alt="logo"
           class="logo ion-padding"
+          @click="goHome"
         />
         <ion-button
           id="logoutButton"
@@ -103,6 +104,9 @@ export default {
     };
   },
   methods: {
+    goHome(){
+      this.$router.replace("/home");
+    },
     logout() {
       this.$store.commit("SET_USER", "");
       sessionStorage.setItem("Authenticated", false);
