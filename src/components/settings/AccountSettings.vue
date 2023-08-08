@@ -107,7 +107,6 @@ export default {
       const toast = await toastController.create({
         message:
           "De account instellingen kunnen in deze demo app niet worden gewijzigd.",
-        cssClass: "toast",
         duration: 8000,
         position: "top",
       });

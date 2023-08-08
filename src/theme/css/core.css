@@ -50,7 +50,7 @@ ion-icon {
 }
 
 ion-content {
-  --background: var(--ion-color-secondary);
+  --background: linear-gradient(to right, #141b1f , #475e6c);
 }
 
 ion-thumbnail {
@@ -69,6 +69,13 @@ ion-input.customInput {
 ion-checkbox {
   --border-color: var(--ion-color-primary);
   --checkbox-background: var(--ion-color-secondary-shade);
+}
+
+ion-toast {
+  --background: var(--ion-color-secondary-contrast);
+  color: var(--ion-color-secondary);
+  --height: 4vh;
+  font-size: larger;
 }
 /*End General ionic elements*/
 
@@ -97,7 +104,8 @@ ion-card-content {
   font-size: 1rem;
 }
 
-.card-content-md, .card-content-md p{
+.card-content-md,
+.card-content-md p {
   font-size: 1rem;
 }
 /*End Ion Card*/

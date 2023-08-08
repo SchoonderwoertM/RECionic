@@ -113,7 +113,6 @@ export default {
       const message = "Uw verificatiecode is: ";
       const toast = await toastController.create({
         message: message + randomNumber,
-        cssClass: "toast",
         duration: 8000,
         position: "top",
       });
