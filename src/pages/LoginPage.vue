@@ -25,7 +25,7 @@
           ></ion-input>
           <ion-button type="submit" expand="block">Log in</ion-button>
         </form>
-        <ion-label color="warning">{{ this.output }}</ion-label>
+        <ion-label color="warning"><strong>{{ this.output }}</strong></ion-label>
       </ion-card-content>
     </ion-card>
   </ion-page>

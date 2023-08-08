@@ -4,24 +4,32 @@
       <ion-spinner v-if="loading" name="bubbles"></ion-spinner>
       <ion-card>
         <ion-card-header
-          ><ion-card-title>Rapportage aanpassen</ion-card-title></ion-card-header
+          ><ion-card-title
+            >Rapportage aanpassen</ion-card-title
+          ></ion-card-header
         >
         <ion-card-subtitle>
-          <h2 class="ion-padding-start primaryContrast">
+          <h2 class="primaryContrast ion-margin-start">
             {{ loadedInspection.address.street }}
-            {{ loadedInspection.address.housenumber }},
+            {{ loadedInspection.address.housenumber }}<br>
+            {{loadedInspection.address.zipcode}}
             {{ loadedInspection.address.residence }}
           </h2></ion-card-subtitle
         >
         <ion-card-content>
           <form @submit.prevent="updateReports">
-            <ion-label>Datum:</ion-label>
-            <ion-input
-              class="custom ion-margin-start"
-              type="date"
-              v-model="loadedInspection.inspections[0].date"
-              required
-            />
+            <ion-list class="ion-list" lines="none"
+              ><ion-item>
+                <ion-label position="fixed">Datum:</ion-label>
+                <ion-input
+                  aria-label="Datum"
+                  class="customInput"
+                  type="date"
+                  v-model="loadedInspection.inspections[0].date"
+                  required
+                />
+              </ion-item>
+            </ion-list>
             <damageReport
               :damageReport="loadedInspection.inspections[0].damageReport"
             />
@@ -40,11 +48,14 @@
                 loadedInspection.inspections[0].modificationsReport
               "
             />
-            <ion-label position="fixed">Afronden:</ion-label>
-            <ion-checkbox
-              aria-label="Afronden"
-              v-model="loadedInspection.inspections[0].completed"
-            ></ion-checkbox>
+            <ion-list lines="none" class="ion-list">
+              <ion-item>
+                <ion-label position="fixed">Rapport afgerond:</ion-label>
+                <ion-checkbox
+                  aria-label="Afronden"
+                  v-model="loadedInspection.completed"
+                ></ion-checkbox> </ion-item
+            ></ion-list>
             <ion-button class="ion-margin-bottom" type="submit" expand="block"
               >Opslaan</ion-button
             >
@@ -113,6 +124,7 @@ export default {
       this.$router.go(-2);
     },
     cancel() {
+      this.$store.dispatch("getInspections");
       this.$router.go(-2);
     },
   },

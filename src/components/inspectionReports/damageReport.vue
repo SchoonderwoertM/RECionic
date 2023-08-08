@@ -15,7 +15,7 @@
     <ion-item>
       <ion-label position="fixed">Locatie:</ion-label>
       <ion-input
-        class="custom ion-margin-top"
+        class="customInput ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="damageReport.damLocation"
@@ -49,7 +49,7 @@
     <ion-item>
       <ion-label position="fixed">Datum:</ion-label>
       <ion-input
-        class="custom"
+        class="customInput"
         aria-label="Datum"
         type="date"
         v-model="damageReport.damDate"
@@ -65,7 +65,7 @@
     <ion-item>
       <ion-label position="fixed">Omschrijving:</ion-label>
       <ion-input
-        class="custom"
+        class="customInput"
         aria-label="Omschrijving"
         type="text"
         v-model="damageReport.damDescription"
@@ -74,22 +74,21 @@
     </ion-item>
     <ion-item>
       <ion-input
-        position="fixed"
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto 1"
         type="text"
         v-model="damageReport.damPhoto1"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo1')">Foto toevoegen</ion-button>
     </ion-item>
     <ion-item>
       <ion-input
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto 2"
         type="text"
         v-model="damageReport.damPhoto2"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo2')">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>
@@ -133,7 +132,7 @@ export default {
     };
   },
   methods: {
-    async getPicture() {
+    async getPicture(imageKey) {
       try {
         const image = await Camera.getPhoto({
           quality: 90,
@@ -141,7 +140,7 @@ export default {
           resultType: CameraResultType.Uri,
         });
         const imageUrl = image.webPath;
-        this.damageReport.damPhotos = imageUrl;
+        this.damageReport[`dam${imageKey}`] = imageUrl;
       } catch (error) {
         console.error("Camera error:", error);
       }

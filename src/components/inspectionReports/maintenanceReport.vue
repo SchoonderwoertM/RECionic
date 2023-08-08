@@ -15,7 +15,7 @@
     <ion-item
       ><ion-label position="fixed">Locatie:</ion-label>
       <ion-input
-        class="custom ion-margin-top"
+        class="customInput ion-margin-top"
         aria-label="Locatie"
         type="text"
         v-model="maintenanceReport.maintLocation"
@@ -56,27 +56,28 @@
     </ion-item>
     <ion-item>
       <ion-input
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto's"
         type="text"
         v-model="maintenanceReport.maintPhoto1"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo1')">Foto toevoegen</ion-button>
     </ion-item>
     <ion-item>
       <ion-input
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto's"
         type="text"
         v-model="maintenanceReport.maintPhoto2"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo2')">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>
 
 <script>
 import { bookmark } from "ionicons/icons";
+import { Camera, CameraResultType } from "@capacitor/camera";
 
 import {
   IonList,
@@ -113,7 +114,7 @@ export default {
     };
   },
   methods: {
-    async getPicture() {
+    async getPicture(imageKey) {
       try {
         const image = await Camera.getPhoto({
           quality: 90,
@@ -121,7 +122,7 @@ export default {
           resultType: CameraResultType.Uri,
         });
         const imageUrl = image.webPath;
-        this.damageReport.damPhotos = imageUrl;
+        this.maintenanceReport[`maint${imageKey}`] = imageUrl;
       } catch (error) {
         console.error("Camera error:", error);
       }

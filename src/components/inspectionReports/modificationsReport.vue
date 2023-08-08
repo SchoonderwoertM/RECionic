@@ -19,7 +19,7 @@
     <ion-item
       ><ion-label position="fixed">Locatie modificatie: </ion-label>
       <ion-input
-        class="custom ion-margin-top"
+        class="customInput ion-margin-top"
         aria-label="Locatie modificatie"
         type="text"
         v-model="modificationsReport.modiLocation"
@@ -40,7 +40,7 @@
     <ion-item
       ><ion-label position="fixed">Beschrijving modificatie: </ion-label>
       <ion-input
-        class="custom"
+        class="customInput"
         aria-label="Beschrijving modificatie"
         type="text"
         v-model="modificationsReport.modiDescription"
@@ -66,7 +66,7 @@
     <ion-item
       ><ion-label position="fixed">Opmerkingen: </ion-label>
       <ion-input
-        class="custom"
+        class="customInput"
         aria-label="Opmerkingen"
         type="text"
         v-model="modificationsReport.modComments"
@@ -74,27 +74,28 @@
     ></ion-item>
     <ion-item>
       <ion-input
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto's"
         type="text"
         v-model="modificationsReport.modPhoto1"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo1')">Foto toevoegen</ion-button>
     </ion-item>
     <ion-item>
       <ion-input
-        class="custom ion-margin-end"
+        class="customInput ion-margin-end"
         aria-label="Foto's"
         type="text"
         v-model="modificationsReport.modPhoto2"
       ></ion-input>
-      <ion-button @click="getPicture">Foto toevoegen</ion-button>
+      <ion-button @click="getPicture('Photo2')">Foto toevoegen</ion-button>
     </ion-item>
   </ion-list>
 </template>
 
 <script>
 import { bookmark } from "ionicons/icons";
+import { Camera, CameraResultType } from "@capacitor/camera";
 
 import {
   IonList,
@@ -129,7 +130,7 @@ export default {
     };
   },
   methods: {
-    async getPicture() {
+    async getPicture(imageKey) {
       try {
         const image = await Camera.getPhoto({
           quality: 90,
@@ -137,7 +138,7 @@ export default {
           resultType: CameraResultType.Uri,
         });
         const imageUrl = image.webPath;
-        this.damageReport.damPhotos = imageUrl;
+        this.modificationsReport[`modi${imageKey}`] = imageUrl;
       } catch (error) {
         console.error("Camera error:", error);
       }
