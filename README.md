@@ -3,7 +3,7 @@
 ## Installatie
 1. Kloon de repository van Github.
 
-    git clone <repository-url>
+    git clone \<repository-url\>
 
 2. Installeer de vereiste packages.
 
