@@ -3,15 +3,15 @@
 ## Installatie
 1. Kloon de repository van Github.
 
-    git clone \<repository-url\>
+    _git clone \<repository-url\>_
 
 2. Installeer de vereiste packages.
 
-    npm install
+    _npm install_
 
 3. Start de server
 
-    ionic serve
+    _ionic serve_
 
 Live versie: [https://super-valkyrie-5e1714.netlify.app](https://super-valkyrie-5e1714.netlify.app/)
 
