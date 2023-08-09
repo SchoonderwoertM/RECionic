@@ -1,0 +1,288 @@
+[
+  {
+    "id": 5,
+    "completed": true,
+    "address": {
+      "street": "Jan Weitkamplaan",
+      "housenumber": 4,
+      "zipcode": "7772 SE",
+      "residence": "Hardenberg"
+    },
+    "inspections": [
+      {
+        "id": 104,
+        "date": "2023-02-04",
+        "damageReport": {
+          "damPerform": false,
+          "damLocation": "",
+          "damNew": false,
+          "damType": "",
+          "damDate": "",
+          "damAcuteAction": false,
+          "damPhoto1": "",
+          "damPhoto2": ""
+        },
+        "maintenanceReport": {
+          "maintPerform": true,
+          "maintLocation": "Badkamer",
+          "maintType": "Schilderwerk",
+          "maintAcuteAction": true,
+          "maintCost": "0-500",
+          "maintPhoto1": "/Images/Photo1.jpg",
+          "maintPhoto2": "/Images/Photo2.jpg"
+        },
+        "installationsReport": {
+          "techPerform": true,
+          "techLocation": "Voordeur",
+          "techType": "Beveiliging",
+          "techMalfunction": "Intercom werkt niet",
+          "techTestProcedure": "@/assets/files/testProcudure.pdf",
+          "techApproved": true,
+          "techComments": "Gerepareerd",
+          "techPhoto1": "/Images/Photo1.jpg",
+          "techPhoto2": "/Images/Photo2.jpg"
+        },
+        "modificationsReport": {
+          "modiPerform": false,
+          "modiSituation": "",
+          "modiLocation": "",
+          "modiPerformedBy": "",
+          "modiDescription": "",
+          "modiAction": "",
+          "modComments": "",
+          "modPhoto1": "",
+          "modPhoto2": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "completed": true,
+    "address": {
+      "street": "Drogteropslagen",
+      "housenumber": 6,
+      "zipcode": "7705 PN",
+      "residence": "Drogteropsslagen"
+    },
+    "inspections": [
+      {
+        "id": 234,
+        "date": "2023-01-21",
+        "damageReport": {
+          "damPerform": true,
+          "damLocation": "Badkamer",
+          "damNew": "Normaal gebruik",
+          "damType": "Slijtage",
+          "damDate": "2022-03-01",
+          "damAcuteAction": true,
+          "damDescription": "Tegels komen los",
+          "damPhoto1": "/Images/Photo1.jpg",
+          "damPhoto2": "/Images/Photo2.jpg"
+        },
+        "maintenanceReport": {
+          "maintPerform": false,
+          "maintLocation": "",
+          "maintType": "",
+          "maintAcuteAction": false,
+          "maintCost": "",
+          "maintPhoto1": "",
+          "maintPhoto2": ""
+        },
+        "installationsReport": {
+          "techPerform": false,
+          "techLocation": "",
+          "techType": "",
+          "techMalfunction": "",
+          "techTestProcedure": "",
+          "techApproved": false,
+          "techComments": "",
+          "techPhoto1": "",
+          "techPhoto2": ""
+        },
+        "modificationsReport": {
+          "modiPerform": true,
+          "modiSituation": "@/assets/files/existingSituation.pdf",
+          "modiLocation": "Meterkast",
+          "modiPerformedBy": "Aannemer",
+          "modiDescription": "Opnieuw bedraden",
+          "modiAction": "Laten aanpassen en keuren",
+          "modComments": "",
+          "modPhoto1": "/Images/Photo1.jpg",
+          "modPhoto2": "/Images/Photo2.jpg"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "completed": true,
+    "address": {
+      "street": "Paardenlanden",
+      "housenumber": 15,
+      "zipcode": "7925 PJ",
+      "residence": "Linde"
+    },
+    "inspections": [
+      {
+        "id": 102,
+        "date": "2023-01-06",
+        "damageReport": {
+          "damPerform": false,
+          "damLocation": "",
+          "damNew": false,
+          "damType": "",
+          "damDate": "",
+          "damAcuteAction": false,
+          "damPhoto1": "",
+          "damPhoto2": ""
+        },
+        "maintenanceReport": {
+          "maintPerform": true,
+          "maintLocation": "Schuur",
+          "maintType": "Schilderwerk",
+          "maintAcuteAction": false,
+          "maintCost": "1500+",
+          "maintPhoto1": "/Images/Photo1.jpg",
+          "maintPhoto2": "/Images/Photo2.jpg"
+        },
+        "installationsReport": {
+          "techPerform": false,
+          "techLocation": "",
+          "techType": "",
+          "techMalfunction": "",
+          "techTestProcedure": "",
+          "techApproved": false,
+          "techComments": "",
+          "techPhoto1": "",
+          "techPhoto2": ""
+        },
+        "modificationsReport": {
+          "modiPerform": false,
+          "modiSituation": "",
+          "modiLocation": "",
+          "modiPerformedBy": "",
+          "modiDescription": "",
+          "modiAction": "",
+          "modComments": "",
+          "modPhoto1": "",
+          "modPhoto2": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "completed": false,
+    "address": {
+      "street": "Noord Stegeren",
+      "housenumber": 26,
+      "zipcode": "7701 RT",
+      "residence": "Dedemsvaart"
+    },
+    "inspections": [
+      {
+        "id": 234,
+        "date": "2023-01-06",
+        "damageReport": {
+          "damPerform": false,
+          "damLocation": "",
+          "damNew": false,
+          "damType": "",
+          "damDate": "",
+          "damAcuteAction": false,
+          "damPhoto1": "",
+          "damPhoto2": ""
+        },
+        "maintenanceReport": {
+          "maintPerform": false,
+          "maintLocation": "",
+          "maintType": "",
+          "maintAcuteAction": false,
+          "maintCost": "",
+          "maintPhoto1": "",
+          "maintPhoto2": ""
+        },
+        "installationsReport": {
+          "techPerform": true,
+          "techLocation": "Gang",
+          "techType": "Verwarming",
+          "techMalfunction": "Wordt niet warm",
+          "techTestProcedure": "@/assets/files/testProcudure.pdf",
+          "techApproved": false,
+          "techComments": "",
+          "techPhoto1": "",
+          "techPhoto2": ""
+        },
+        "modificationsReport": {
+          "modiPerform": false,
+          "modiSituation": "",
+          "modiLocation": "",
+          "modiPerformedBy": "",
+          "modiDescription": "",
+          "modiAction": "",
+          "modComments": "",
+          "modPhoto1": "",
+          "modPhoto2": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "completed": false,
+    "address": {
+      "street": "Drogteropslagen",
+      "housenumber": 31,
+      "zipcode": "7705 PC",
+      "residence": "Drogteropslagen"
+    },
+    "inspections": [
+      {
+        "id": 101,
+        "date": "2023-01-05",
+        "damageReport": {
+          "damPerform": true,
+          "damLocation": "Woonkamer",
+          "damNew": true,
+          "damType": "Geweld",
+          "damDate": "",
+          "damAcuteAction": false,
+          "damPhoto1": "",
+          "damPhoto2": ""
+        },
+        "maintenanceReport": {
+          "maintPerform": false,
+          "maintLocation": "",
+          "maintType": "",
+          "maintAcuteAction": false,
+          "maintCost": "",
+          "maintPhoto1": "",
+          "maintPhoto2": ""
+        },
+        "installationsReport": {
+          "techPerform": false,
+          "techLocation": "",
+          "techType": "",
+          "techMalfunction": "",
+          "techTestProcedure": "",
+          "techApproved": false,
+          "techComments": "",
+          "techPhoto1": "",
+          "techPhoto2": ""
+        },
+        "modificationsReport": {
+          "modiPerform": false,
+          "modiSituation": "",
+          "modiLocation": "",
+          "modiPerformedBy": "",
+          "modiDescription": "",
+          "modiAction": "",
+          "modComments": "",
+          "modPhoto1": "",
+          "modPhoto2": ""
+        }
+      }
+    ]
+  }
+]

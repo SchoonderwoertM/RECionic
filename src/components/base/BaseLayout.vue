@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import dataBase from '@/data/db.json';
 import {
   homeOutline,
   callOutline,
@@ -104,10 +105,20 @@ export default {
     };
   },
   methods: {
-    goHome(){
+    goHome() {
       this.$router.replace("/home");
     },
     logout() {
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key":
+            "$2b$10$xGY57xK/yyF20/AcOpvLJuWh3MnrWeuQZG60ykSCOe49wS5oQ0tw.",
+        },
+        body: JSON.stringify(dataBase),
+      };
+      fetch("https://api.jsonbin.io/v3/b/648ed6fc8e4aa6225eb0471c", options);
       this.$store.commit("SET_USER", "");
       sessionStorage.setItem("Authenticated", false);
       this.$router.replace("/login");
