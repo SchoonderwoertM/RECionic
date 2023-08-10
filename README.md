@@ -92,5 +92,5 @@ Tijdens de ontwikkeling van het project is de style guide van het Vue.js framewo
 Voor het beschikbaar stellen van de data via een API is gebruik gemaakt van JSONBin. JSONbin biedt helaas geen mogelijkheid om een enkel record in de data aan te passen. Hierdoor is het binnen dit prototype niet mogelijk om de accountinstellingen wijzigen. Dit zal namelijk tot gevolg hebben dat alle accounts worden overschreven.
 
 ## Slotwoord
-Ik hoop dat ik u voldoende inzicht heb kunnen geven in het proces dat is doorlopen om het prototype te bewerkstelligen. Mocht u nog vragen hebben dan kunt u mij contacteren via:
+Ik hoop dat ik u voldoende inzicht heb kunnen geven in het proces dat is doorlopen om het prototype te bewerkstelligen. Mocht u vragen hebben dan kunt u mij contacteren via:
 [mariska.sdw@gmail.com](mailto:mariska.sdw@gmail.com)  
