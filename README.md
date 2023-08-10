@@ -9,7 +9,7 @@
 
     _npm install_
 
-3. Start de server
+3. Start de server.
 
     _ionic serve_
 
@@ -60,7 +60,7 @@ Om de gebruiksvriendelijkheid van de applicatie naar een hoger niveau te brengen
 
 9. Foutmeldingen worden netjes aan de gebruiker getoond.
 
-10. Er is een contactpagina opgenomen. Mocht de gebruiker hulp nodig hebben, dan kan hij/zij daar de contactgegevens vinden.
+10. Er is een contactpagina opgenomen. 
 
 ## Toegankelijkheid
 De toegankelijkheid van de applicatie is getoetst volgens de WCAG 2.1 niveau A richtlijnen.
@@ -77,19 +77,18 @@ De toegankelijkheid van de applicatie is getoetst volgens de WCAG 2.1 niveau A r
 
 - Het wordt middels een tekstuele melding aan de gebruiker getoond als er een invoerfout wordt gemaakt.
 
-Er is in dit prototype nog geen gehoor gegeven aan de richtlijn om alle functionaliteit middels een toetsenbord bedienbaar te maken.
+Het prototype is niet ingesteld om alle functionaliteit middels een toetsenbord bedienbaar te maken. Voordat de applicatie in productie gaat, is het aan te raden dit door te voeren.
 
 ## Veiligheid
 Om de applicatie enkel beschikbaar te stellen voor de inspecteurs, is een two-factor inlogprocedure geïmplementeerd. In dit prototype is de two-factor identificatie gesimuleerd door het weergeven van een verificatiecode middels een toast. In de definitieve versie zal de verificatiecode verstuurd moeten worden naar een mobiele telefoon.
 
-Als de applicatie in productie wordt genomen is het essentieel voor de veiligheid dat het wachtwoord van de gebruiker middels hash worden opgeslagen.
+Als de applicatie in productie wordt genomen is het essentieel voor de veiligheid dat het wachtwoord van de gebruiker middels hash wordt opgeslagen.
 
 ## Style guide
 Tijdens de ontwikkeling van het project is de style guide van het Vue.js framework in acht genomen.
 
-
 ## Aanvullingen
-Voor het beschikbaar stellen van de data via een API is gebruik gemaakt van JSONBin. JSONbin biedt helaas geen mogelijkheid om een enkel record in de data aan te passen. Hierdoor is het binnen dit prototype niet mogelijk om de accountinstellingen wijzigen. Dit zal namelijk tot gevolg hebben dat alle accounts worden overschreven.
+Voor het beschikbaar stellen van de data via een API is gebruik gemaakt van JSONBin. JSONbin biedt helaas geen mogelijkheid om een enkel record aan te passen. Hierdoor is het binnen dit prototype niet mogelijk om de accountinstellingen wijzigen. Dit zal namelijk alle accounts overschrijven.
 
 ## Slotwoord
 Ik hoop dat ik u voldoende inzicht heb kunnen geven in het proces dat is doorlopen om het prototype te bewerkstelligen. Mocht u vragen hebben dan kunt u mij contacteren via:
