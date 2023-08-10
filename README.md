@@ -13,7 +13,7 @@
 
     _ionic serve_
 
-Live versie: [https://super-valkyrie-5e1714.netlify.app](https://super-valkyrie-5e1714.netlify.app/)
+Live versie: [https://super-valkyrie-5e1714.netlify.app](https://super-valkyrie-5e1714.netlify.app/)](https://legendary-meringue-4fd5f5.netlify.app)
 
 ## Login
 |Gebruikersnaam|Wachtwoord  |
