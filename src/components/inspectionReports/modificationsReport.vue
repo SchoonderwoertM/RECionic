@@ -3,7 +3,7 @@
     <ion-list-header>
       <ion-label
         ><ion-icon
-          v-if="modificationsReport.modiLocation"
+          v-if="modificationsReport.modiPerform"
           :icon="bookmark"
           slot="icon-only"
           aria-hidden="true"

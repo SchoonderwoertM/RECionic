@@ -3,7 +3,7 @@
     <ion-list-header>
       <ion-label>
         <ion-icon
-          v-if="installationsReport.techLocation"
+          v-if="installationsReport.techPerform"
           :icon="bookmark"
           slot="icon-only"
           aria-hidden="true"

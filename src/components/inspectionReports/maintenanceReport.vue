@@ -3,7 +3,7 @@
     <ion-list-header>
       <ion-label
         ><ion-icon
-          v-if="maintenanceReport.maintLocation"
+          v-if="maintenanceReport.maintPerform"
           :icon="bookmark"
           slot="icon-only"
           aria-hidden="true"
